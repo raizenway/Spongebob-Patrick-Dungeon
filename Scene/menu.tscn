@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://pmruh0hwb7gl"]
+
+[ext_resource type="Script" path="res://Script/menu.gd" id="1_1uhao"]
+[ext_resource type="Texture2D" uid="uid://djp2k1ooe784n" path="res://Assets/2d/main menu.jpeg" id="2_7mjl1"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_wf3un"]
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1uhao")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 250.0
+offset_right = 834.0
+offset_bottom = 351.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Play Spongebob" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Play as Spongebob"
+icon = SubResource("ViewportTexture_wf3un")
+
+[node name="Play Patrick" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Play as Patrick"
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Exit"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+scale = Vector2(12.415, 12.415)
+motion_scale = Vector2(18.68, 18.68)
+
+[node name="Oip" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(46.6371, 26.5002)
+scale = Vector2(0.19848, 0.173915)
+texture = ExtResource("2_7mjl1")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play Spongebob" to="." method="_on_play_spongebob_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play Patrick" to="." method="_on_play_patrick_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play Patrick" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch7ondeij2147"]
+
+[ext_resource type="PackedScene" path="res://Assets/map spongebob/jalan_spongebob.tscn" id="1_d17lo"]
+[ext_resource type="PackedScene" path="res://Assets/map spongebob/tembok_spongebob.tscn" id="2_14ayl"]
+[ext_resource type="PackedScene" uid="uid://chjnlf1fget54" path="res://Assets/map spongebob/atap-spongebob.glb" id="3_iiv06"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0280263, 0.999607, 0, -0.999607, 0.0280263, 0, 7.66321, 0)
+
+[node name="jalan-spongebob" parent="." instance=ExtResource("1_d17lo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.3913, -4.76837e-07, 18.0268)
+
+[node name="tembok-spongebob" parent="." instance=ExtResource("2_14ayl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.3971, 1.18521, 18.0514)
+
+[node name="atap-spongebob" parent="." instance=ExtResource("3_iiv06")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4135, 1.16785, 17.9802)
+visible = false

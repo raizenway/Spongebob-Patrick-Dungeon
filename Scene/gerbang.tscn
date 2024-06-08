@@ -1,0 +1,86 @@
+[gd_scene load_steps=10 format=3 uid="uid://dxljp5784hide"]
+
+[ext_resource type="PackedScene" uid="uid://e48cm6a670vq" path="res://Assets/rintangan/gerbang.glb" id="1_apobo"]
+[ext_resource type="Script" path="res://Script/gerbang.gd" id="2_p7pp1"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_kdpl5"]
+points = PackedVector3Array(0.999979, 0.999979, 1, 0.999979, -1, 1, 0.999979, 0.999979, -1, -1, 0.999979, 1, -1, -1, 1, 0.999979, -1, -1, -1, 0.999979, -1, -1, -1, -1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_v8rei"]
+points = PackedVector3Array(0.999979, 0.999979, 1, 0.999979, -1, 1, 0.999979, 0.999979, -1, -1, 0.999979, 1, -1, -1, 1, 0.999979, -1, -1, -1, 0.999979, -1, -1, -1, -1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yet1u"]
+points = PackedVector3Array(0.999979, 0.999979, 0.993446, -1, 0.999979, 0.993446, 0.999979, -1, 0.993446, 0.999979, 0.999979, -66, -1, -1, 0.993446, -1, 0.999979, -66, 0.999979, -1, -66, -1, -1, -66)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hbeoh"]
+points = PackedVector3Array(0.999979, 0.999979, 1, 0.999979, -1, 1, 0.999979, 0.999979, -1, -1, 0.999979, 1, -1, -1, 1, 0.999979, -1, -1, -1, 0.999979, -1, -1, -1, -1)
+
+[sub_resource type="Animation" id="Animation_s045n"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cube_003:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.907984, 1.63252), Vector3(0, 2.908, 1.633)]
+}
+
+[sub_resource type="Animation" id="Animation_aslgd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cube_003:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.908, 1.633)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_biep7"]
+_data = {
+"RESET": SubResource("Animation_aslgd"),
+"open": SubResource("Animation_s045n")
+}
+
+[node name="GS" instance=ExtResource("1_apobo")]
+script = ExtResource("2_p7pp1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube" index="0"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Cube/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_kdpl5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_002" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_002/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_v8rei")
+
+[node name="Cube_003" parent="." index="2"]
+transform = Transform3D(0.2, 0, 0, 0, 1.4, 0, 0, 0, 0.023681, 0, 0.908, 1.633)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_003" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_003/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_yet1u")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_004" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_004/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_hbeoh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+libraries = {
+"": SubResource("AnimationLibrary_biep7")
+}

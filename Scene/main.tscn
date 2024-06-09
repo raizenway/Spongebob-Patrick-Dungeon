@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ch7ondeij2147" path="res://Scene/map-spongebob-noobject.tscn" id="1_5kl0p"]
 [ext_resource type="PackedScene" uid="uid://k481fkrd1j78" path="res://Assets/rintangan/duri.glb" id="2_l702r"]
 [ext_resource type="PackedScene" uid="uid://ctj6ciyrlig0y" path="res://Assets/objek/framepongebob.glb" id="3_02g5s"]
-[ext_resource type="PackedScene" uid="uid://87tlsv5wnel8" path="res://Scene/spongbob.tscn" id="3_srxqr"]
+[ext_resource type="PackedScene" uid="uid://87tlsv5wnel8" path="res://Assets/Characters/spongbobfix.glb" id="3_srxqr"]
 [ext_resource type="PackedScene" uid="uid://cd7jta6c1osp" path="res://Assets/rintangan/pintu.glb" id="4_a2rlh"]
 [ext_resource type="PackedScene" uid="uid://blhdys4bmlv37" path="res://Assets/objek/batu.fiksglb.glb" id="5_2rgir"]
 [ext_resource type="PackedScene" uid="uid://4e4go5ea7sjn" path="res://Assets/rintangan/cerobong.glb" id="6_8evxr"]

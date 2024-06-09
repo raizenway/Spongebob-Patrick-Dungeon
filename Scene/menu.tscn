@@ -49,6 +49,6 @@ scale = Vector2(0.19848, 0.173915)
 texture = ExtResource("2_7mjl1")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play Spongebob" to="." method="_on_play_spongebob_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Play Patrick" to="." method="_on_play_patrick_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play Patrick" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play Patrick" to="." method="_on_play_patrick_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

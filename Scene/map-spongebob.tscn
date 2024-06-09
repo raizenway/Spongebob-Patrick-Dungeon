@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://dlnxbx7grau21"]
+[gd_scene load_steps=21 format=3 uid="uid://dlnxbx7grau21"]
 
-[ext_resource type="PackedScene" path="res://Assets/map spongebob/jalan_spongebob.tscn" id="2_22p6d"]
-[ext_resource type="PackedScene" path="res://Assets/map spongebob/tembok_spongebob.tscn" id="3_iyv47"]
+[ext_resource type="Script" path="res://Scene/CharacterBody3D.gd" id="1_0v11n"]
+[ext_resource type="PackedScene" uid="uid://i8ykgq6t6yn2" path="res://Assets/map spongebob/jalan_spongebob.tscn" id="2_22p6d"]
+[ext_resource type="PackedScene" uid="uid://4fqp7oea641a" path="res://Assets/map spongebob/tembok_spongebob.tscn" id="3_iyv47"]
 [ext_resource type="PackedScene" uid="uid://chjnlf1fget54" path="res://Assets/map spongebob/atap-spongebob.glb" id="4_pf3ew"]
 [ext_resource type="PackedScene" uid="uid://k481fkrd1j78" path="res://Assets/rintangan/duri.glb" id="5_cjm8h"]
 [ext_resource type="PackedScene" uid="uid://ctj6ciyrlig0y" path="res://Assets/objek/framepongebob.glb" id="6_hglis"]
@@ -11,8 +12,12 @@
 [ext_resource type="PackedScene" uid="uid://68vhg6rbk8j8" path="res://Assets/objek/tombol.glb" id="10_k7vl2"]
 [ext_resource type="PackedScene" uid="uid://e48cm6a670vq" path="res://Assets/rintangan/gerbang.glb" id="11_17x32"]
 [ext_resource type="PackedScene" uid="uid://bp2pt16isa7d3" path="res://Assets/objek/kunci1.glb" id="12_lhn34"]
-[ext_resource type="PackedScene" uid="uid://bgmnqpp2a3qk4" path="res://Assets/mob/spider.glb" id="13_q665j"]
+[ext_resource type="PackedScene" uid="uid://bopnbqtm8jng5" path="res://Scene/mob.tscn" id="12_luwrg"]
 [ext_resource type="PackedScene" uid="uid://dj2nfe62hpn35" path="res://Assets/objek/tali.glb" id="14_d8uil"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_bmjcw"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bqtas"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_spd01"]
 size = Vector3(1, 2.83743, 1.99158)
@@ -27,6 +32,19 @@ size = Vector3(1, 0.725, 1)
 size = Vector3(0.355, 3, 2)
 
 [node name="Node3D" type="Node3D"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0280263, 0.999607, 0, -0.999607, 0.0280263, -0.553576, 7.66321, 19.9341)
+script = ExtResource("1_0v11n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+mesh = SubResource("CapsuleMesh_bmjcw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_bqtas")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.0280263, 0.999607, 0, -0.999607, 0.0280263, 0, 7.66321, 0)
@@ -334,34 +352,34 @@ transform = Transform3D(0.393496, -0.880007, 0.265986, 0.70492, 0.103097, -0.701
 
 [node name="laba-laba" type="Node3D" parent="."]
 
-[node name="Sketchfab_Scene" parent="laba-laba" instance=ExtResource("13_q665j")]
-transform = Transform3D(108.392, 0, 0, 0, 108.392, 0, 0, 0, 108.392, 12.8715, 1.51804, 7.84694)
+[node name="laba-laba1" parent="laba-laba" instance=ExtResource("12_luwrg")]
+transform = Transform3D(108.973, 0, 0, 0, 108.973, 0, 0, 0, 108.973, 12.8394, 1.5, 7.84313)
 
-[node name="Sketchfab_Scene2" parent="laba-laba" instance=ExtResource("13_q665j")]
-transform = Transform3D(108.392, 0, 0, 0, 108.392, 0, 0, 0, 108.392, -8.06608, 1.51804, 7.98837)
+[node name="laba-laba2" parent="laba-laba" instance=ExtResource("12_luwrg")]
+transform = Transform3D(108.973, 0, 0, 0, 108.973, 0, 0, 0, 108.973, -8.03819, 1.5, 8.17261)
 
-[node name="Sketchfab_Scene3" parent="laba-laba" instance=ExtResource("13_q665j")]
-transform = Transform3D(1.52662, 0, 108.381, 0, 108.392, 0, -108.381, 0, 1.52662, -9.19777, 1.51804, 3.01619)
+[node name="laba-laba3" parent="laba-laba" instance=ExtResource("12_luwrg")]
+transform = Transform3D(3.71757, 0, 108.91, 0, 108.973, 0, -108.91, 0, 3.71757, -9.2587, 1.5, 3.10604)
 
-[node name="Sketchfab_Scene4" parent="laba-laba" instance=ExtResource("13_q665j")]
-transform = Transform3D(-108.382, 0, 1.47367, 0, 108.392, 0, -1.47367, 0, -108.382, -18.4615, 1.51804, 7.25538)
+[node name="laba-laba4" parent="laba-laba" instance=ExtResource("12_luwrg")]
+transform = Transform3D(-108.229, 0, -12.714, 0, 108.973, 0, 12.714, 0, -108.229, -18.4968, 1.5, 7.27364)
 
-[node name="Sketchfab_Scene5" parent="laba-laba" instance=ExtResource("13_q665j")]
-transform = Transform3D(-3.52001, 0, 108.335, 0, 108.392, 0, -108.335, 0, -3.52001, -23.0173, 1.51804, 11.3743)
+[node name="laba-laba6" parent="laba-laba" instance=ExtResource("12_luwrg")]
+transform = Transform3D(-1.12783, 0, 108.967, 0, 108.973, 0, -108.967, 0, -1.12783, -23.1568, 1.5, 11.1746)
 
-[node name="tali" type="Node3D" parent="."]
+[node name="tal5" type="Node3D" parent="."]
 
-[node name="tali" parent="tali" instance=ExtResource("14_d8uil")]
+[node name="tali" parent="tal5" instance=ExtResource("14_d8uil")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 5.0881, 2.33105, 8.33602)
 
-[node name="tali2" parent="tali" instance=ExtResource("14_d8uil")]
+[node name="tali2" parent="tal5" instance=ExtResource("14_d8uil")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -5.46842, 2.33105, 24.4177)
 
-[node name="tali3" parent="tali" instance=ExtResource("14_d8uil")]
+[node name="tali3" parent="tal5" instance=ExtResource("14_d8uil")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -12.2479, 2.33105, 2.9025)
 
-[node name="tali4" parent="tali" instance=ExtResource("14_d8uil")]
+[node name="tali4" parent="tal5" instance=ExtResource("14_d8uil")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -18.4644, 2.33105, 16.4338)
 
-[node name="tali5" parent="tali" instance=ExtResource("14_d8uil")]
+[node name="tali5" parent="tal5" instance=ExtResource("14_d8uil")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -23.5134, 2.33105, 23.8346)

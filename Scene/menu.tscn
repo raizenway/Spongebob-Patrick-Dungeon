@@ -1,34 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://pmruh0hwb7gl"]
+[gd_scene load_steps=6 format=3 uid="uid://pmruh0hwb7gl"]
 
 [ext_resource type="Script" path="res://Script/menu.gd" id="1_1uhao"]
-[ext_resource type="Texture2D" uid="uid://djp2k1ooe784n" path="res://Assets/2d/main menu.jpeg" id="2_7mjl1"]
+[ext_resource type="Texture2D" uid="uid://bkpd2fv7mc2jo" path="res://Assets/2d/Pantai.png" id="2_m8mb7"]
+[ext_resource type="Texture2D" uid="uid://c5116kewn7fu8" path="res://Assets/logo.png" id="3_qkmnw"]
+[ext_resource type="Theme" uid="uid://diy0fti5rjkqm" path="res://Assets/button.tres" id="4_61nj1"]
+[ext_resource type="AudioStream" uid="uid://cjbtrh0v30wyq" path="res://Assets/sound/bgm/roa-music-walk-around(chosic.com).mp3" id="5_g85kj"]
 
 [node name="Multiplayer" type="Node"]
 script = ExtResource("1_1uhao")
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -257.0
-offset_top = -50.5
-offset_right = 257.0
-offset_bottom = 50.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-
-[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Play"
-
-[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Exit"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -36,10 +15,35 @@ text = "Exit"
 scale = Vector2(12.415, 12.415)
 motion_scale = Vector2(18.68, 18.68)
 
-[node name="Oip" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(77.3258, 43.6871)
-scale = Vector2(0.326269, 0.244876)
-texture = ExtResource("2_7mjl1")
+[node name="Pantai" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(77.0036, 44.0596)
+scale = Vector2(0.0805477, 0.0805477)
+texture = ExtResource("2_m8mb7")
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[node name="Logo" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(80.2255, 19.412)
+scale = Vector2(0.0214102, 0.0214102)
+texture = ExtResource("3_qkmnw")
+
+[node name="Play" type="Button" parent="."]
+offset_left = 631.0
+offset_top = 535.0
+offset_right = 1298.0
+offset_bottom = 697.0
+theme = ExtResource("4_61nj1")
+text = "Play"
+
+[node name="Exit" type="Button" parent="."]
+offset_left = 634.0
+offset_top = 723.0
+offset_right = 1298.0
+offset_bottom = 892.0
+theme = ExtResource("4_61nj1")
+text = "Exit"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_g85kj")
+autoplay = true
+
+[connection signal="pressed" from="Play" to="." method="_on_play"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

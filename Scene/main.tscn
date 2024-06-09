@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c7wnl0c1f6dbp"]
+[gd_scene load_steps=25 format=3 uid="uid://c7wnl0c1f6dbp"]
 
 [ext_resource type="PackedScene" uid="uid://ch7ondeij2147" path="res://Scene/map-spongebob-noobject.tscn" id="1_5kl0p"]
 [ext_resource type="PackedScene" uid="uid://ctj6ciyrlig0y" path="res://Assets/objek/framepongebob.glb" id="3_02g5s"]
@@ -10,16 +10,36 @@
 [ext_resource type="PackedScene" uid="uid://uunnptq8pq16" path="res://Scene/map-patrick-noobject.tscn" id="12_2cp16"]
 [ext_resource type="PackedScene" uid="uid://dnv4o7jutrs68" path="res://Assets/objek/framepatrict.glb" id="13_5iead"]
 [ext_resource type="PackedScene" uid="uid://27bpbsyfxjbs" path="res://Scene/tombol.tscn" id="14_gpom0"]
+[ext_resource type="PackedScene" uid="uid://ugrp7bhxkiob" path="res://Scene/deadzone.tscn" id="15_lt0ef"]
 [ext_resource type="PackedScene" uid="uid://cdahw24bhwq48" path="res://Scene/patrick.tscn" id="16_0uco1"]
+[ext_resource type="Script" path="res://Script/Dead.gd" id="16_d72ev"]
 [ext_resource type="PackedScene" uid="uid://dh7y5dn521uqf" path="res://Scene/pintu.tscn" id="16_eh35o"]
 [ext_resource type="PackedScene" uid="uid://shl1anpxonfe" path="res://Scene/duri.tscn" id="17_bneth"]
 [ext_resource type="Texture2D" uid="uid://bitjdtwhw2ch2" path="res://Assets/key.png" id="19_uwp4n"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_yo7lg"]
+size = Vector3(1.88823, 1, 1.50102)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_ry3uy"]
 size = Vector3(1, 1.41504, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_hmd3x"]
+size = Vector3(1.48048, 1, 1.85206)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_cowu6"]
 size = Vector3(1, 1.41504, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r067s"]
+size = Vector3(2.65747, 1, 2.06079)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iu1tb"]
+size = Vector3(3.10675, 1, 2.06079)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q0p2t"]
+size = Vector3(2.82584, 1, 3.47797)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_me50p"]
+size = Vector3(2.82584, 1, 4.01486)
 
 [node name="main" type="Node3D"]
 
@@ -30,8 +50,24 @@ size = Vector3(1, 1.41504, 1)
 [node name="DS1" parent="mapSpongbob/duri" instance=ExtResource("17_bneth")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.057, 0, 19.738)
 
+[node name="Deadzone" parent="mapSpongbob/duri/DS1" node_paths=PackedStringArray("dead_menu") instance=ExtResource("15_lt0ef")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -23.404, 1.39088, -15.5826)
+dead_menu = NodePath("../../../../Dead")
+
+[node name="CollisionShape3D" parent="mapSpongbob/duri/DS1/Deadzone" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.363472, 0, 0.126167)
+shape = SubResource("BoxShape3D_yo7lg")
+
 [node name="DS2" parent="mapSpongbob/duri" instance=ExtResource("17_bneth")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.057, 0, 19.738)
+
+[node name="Deadzone2" parent="mapSpongbob/duri/DS2" node_paths=PackedStringArray("dead_menu") instance=ExtResource("15_lt0ef")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -23.4035, 1.39088, -15.5766)
+dead_menu = NodePath("../../../../Dead")
+
+[node name="CollisionShape3D" parent="mapSpongbob/duri/DS2/Deadzone2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.363472, 0, 0.126167)
+shape = SubResource("BoxShape3D_yo7lg")
 
 [node name="framepongebob" parent="mapSpongbob" instance=ExtResource("3_02g5s")]
 transform = Transform3D(0.0174504, -0.190715, 0.98149, -0.99584, -0.0911193, -4.56847e-10, 0.0894327, -0.977408, -0.191511, -12.9516, 2.31798, 23.6826)
@@ -238,12 +274,44 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -10.1953)
 [node name="DP3" parent="mapPatrick/duri" instance=ExtResource("17_bneth")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.057, 0, 19.738)
 
+[node name="Deadzone4" parent="mapPatrick/duri/DP3" node_paths=PackedStringArray("dead_menu") instance=ExtResource("15_lt0ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1187, 1.39088, -15.4071)
+dead_menu = NodePath("../../../../Dead")
+
+[node name="CollisionShape3D" parent="mapPatrick/duri/DP3/Deadzone4" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.588575, 0, 0.191359)
+shape = SubResource("BoxShape3D_hmd3x")
+
 [node name="DP2" parent="mapPatrick/duri" instance=ExtResource("17_bneth")]
+
+[node name="Deadzone3" parent="mapPatrick/duri/DP2" node_paths=PackedStringArray("dead_menu") instance=ExtResource("15_lt0ef")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -23.3985, 1.39088, -15.5815)
+dead_menu = NodePath("../../../../Dead")
+
+[node name="CollisionShape3D" parent="mapPatrick/duri/DP2/Deadzone3" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.363472, 0, 0.126167)
+shape = SubResource("BoxShape3D_yo7lg")
 
 [node name="DP1" parent="mapPatrick/duri" instance=ExtResource("17_bneth")]
 
+[node name="Deadzone2" parent="mapPatrick/duri/DP1" node_paths=PackedStringArray("dead_menu") instance=ExtResource("15_lt0ef")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -23.3985, 1.39088, -15.5826)
+dead_menu = NodePath("../../../../Dead")
+
+[node name="CollisionShape3D" parent="mapPatrick/duri/DP1/Deadzone2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.363472, 0, 0.126167)
+shape = SubResource("BoxShape3D_yo7lg")
+
 [node name="DP4" parent="mapPatrick/duri" instance=ExtResource("17_bneth")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.057, 0, 19.738)
+
+[node name="Deadzone5" parent="mapPatrick/duri/DP4" node_paths=PackedStringArray("dead_menu") instance=ExtResource("15_lt0ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1119, 1.39088, -15.4029)
+dead_menu = NodePath("../../../../Dead")
+
+[node name="CollisionShape3D" parent="mapPatrick/duri/DP4/Deadzone5" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.588575, 0, 0.191359)
+shape = SubResource("BoxShape3D_hmd3x")
 
 [node name="framepatrict" parent="mapPatrick" instance=ExtResource("13_5iead")]
 transform = Transform3D(0.357987, 0.904679, -0.231086, -0.903581, 0.398031, 0.15847, 0.235344, 0.152075, 0.959941, -38.9477, 2.85415, -9.96323)
@@ -438,6 +506,96 @@ prompt = NodePath("../../../cmd")
 pair = NodePath("../../../mapSpongbob/cerobong/C2")
 player = NodePath("../../../SubViewportContainer2/SubViewport/patrick")
 
+[node name="dead" type="Node3D" parent="."]
+
+[node name="Deadzone" parent="dead" node_paths=PackedStringArray("dead_menu") instance=ExtResource("15_lt0ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.65845, -2.63501, 24.4029)
+dead_menu = NodePath("../../Dead")
+
+[node name="CollisionShape3D" parent="dead/Deadzone" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0150146, 0, -0.0169678)
+shape = SubResource("BoxShape3D_r067s")
+
+[node name="Deadzone2" parent="dead" node_paths=PackedStringArray("dead_menu") instance=ExtResource("15_lt0ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.33841, -2.63501, 24.4029)
+dead_menu = NodePath("../../Dead")
+
+[node name="CollisionShape3D" parent="dead/Deadzone2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.102814, 0, -0.173513)
+shape = SubResource("BoxShape3D_iu1tb")
+
+[node name="Deadzone3" parent="dead" node_paths=PackedStringArray("dead_menu") instance=ExtResource("15_lt0ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.23558, -2.63501, 8.47946)
+dead_menu = NodePath("../../Dead")
+
+[node name="CollisionShape3D" parent="dead/Deadzone3" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.102814, 0, -0.173513)
+shape = SubResource("BoxShape3D_iu1tb")
+
+[node name="Deadzone4" parent="dead" node_paths=PackedStringArray("dead_menu") instance=ExtResource("15_lt0ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.846, -2.63501, 2.97863)
+dead_menu = NodePath("../../Dead")
+
+[node name="CollisionShape3D" parent="dead/Deadzone4" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.102814, 0, -0.173513)
+shape = SubResource("BoxShape3D_iu1tb")
+
+[node name="Deadzone9" parent="dead" node_paths=PackedStringArray("dead_menu") instance=ExtResource("15_lt0ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.09742, -2.63501, -2.66039)
+dead_menu = NodePath("../../Dead")
+
+[node name="CollisionShape3D" parent="dead/Deadzone9" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.102814, 0, -0.173513)
+shape = SubResource("BoxShape3D_iu1tb")
+
+[node name="Deadzone11" parent="dead" node_paths=PackedStringArray("dead_menu") instance=ExtResource("15_lt0ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.6415, -2.63501, -27.628)
+dead_menu = NodePath("../../Dead")
+
+[node name="CollisionShape3D" parent="dead/Deadzone11" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.102814, 0, -0.173513)
+shape = SubResource("BoxShape3D_iu1tb")
+
+[node name="Deadzone10" parent="dead" node_paths=PackedStringArray("dead_menu") instance=ExtResource("15_lt0ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6726, -2.63501, -2.66039)
+dead_menu = NodePath("../../Dead")
+
+[node name="CollisionShape3D" parent="dead/Deadzone10" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.102814, 0, -0.173513)
+shape = SubResource("BoxShape3D_iu1tb")
+
+[node name="Deadzone5" parent="dead" node_paths=PackedStringArray("dead_menu") instance=ExtResource("15_lt0ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5773, -2.63501, 16.586)
+dead_menu = NodePath("../../Dead")
+
+[node name="CollisionShape3D" parent="dead/Deadzone5" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0376434, 0, -0.195761)
+shape = SubResource("BoxShape3D_q0p2t")
+
+[node name="Deadzone7" parent="dead" node_paths=PackedStringArray("dead_menu") instance=ExtResource("15_lt0ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8651, -2.63501, 11.7365)
+dead_menu = NodePath("../../Dead")
+
+[node name="CollisionShape3D" parent="dead/Deadzone7" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0376434, 0, -0.195761)
+shape = SubResource("BoxShape3D_q0p2t")
+
+[node name="Deadzone6" parent="dead" node_paths=PackedStringArray("dead_menu") instance=ExtResource("15_lt0ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.8974, -2.63501, 23.5218)
+dead_menu = NodePath("../../Dead")
+
+[node name="CollisionShape3D" parent="dead/Deadzone6" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0376434, 0, 0.0726871)
+shape = SubResource("BoxShape3D_me50p")
+
+[node name="Deadzone8" parent="dead" node_paths=PackedStringArray("dead_menu") instance=ExtResource("15_lt0ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.43372, -2.63501, -15.9635)
+dead_menu = NodePath("../../Dead")
+
+[node name="CollisionShape3D" parent="dead/Deadzone8" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0376434, 0, 0.0726871)
+shape = SubResource("BoxShape3D_me50p")
+
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 offset_right = 965.0
 offset_bottom = 1080.0
@@ -543,6 +701,159 @@ theme_override_font_sizes/font_size = 40
 text = "0"
 horizontal_alignment = 2
 
+[node name="Button" type="Button" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -82.0
+offset_right = 82.0
+offset_bottom = 77.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "PAUSE"
+
+[node name="Dead" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("16_d72ev")
+
+[node name="ColorRect" type="ColorRect" parent="Dead"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 0.713726)
+
+[node name="retry" type="Button" parent="Dead"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -15.5
+offset_right = 28.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "RETRY"
+
+[node name="quit" type="Button" parent="Dead"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = 90.0
+offset_right = 152.0
+offset_bottom = 167.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "MAIN MENU"
+
+[node name="Label" type="Label" parent="Dead"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -359.0
+offset_top = 255.0
+offset_right = 359.0
+offset_bottom = 392.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 100
+text = "YOU ARE DEAD"
+
+[node name="pause" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("16_d72ev")
+
+[node name="ColorRect" type="ColorRect" parent="pause"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.713726)
+
+[node name="continue" type="Button" parent="pause"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -132.5
+offset_top = 378.0
+offset_right = 132.5
+offset_bottom = 455.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "CONTINUE"
+
+[node name="retry" type="Button" parent="pause"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -38.5
+offset_right = 79.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "RETRY"
+
+[node name="quit" type="Button" parent="pause"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = 90.0
+offset_right = 152.0
+offset_bottom = 167.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "MAIN MENU"
+
+[node name="Label" type="Label" parent="pause"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -359.0
+offset_top = 177.0
+offset_right = 359.0
+offset_bottom = 314.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 100
+text = "PAUSE GAME"
+horizontal_alignment = 1
+
 [connection signal="visibility_changed" from="mapSpongbob/cerobong/C1/K" to="SubViewportContainer/SubViewport2/Player" method="ambil_kunci"]
 [connection signal="visibility_changed" from="mapSpongbob/cerobong/C2/K" to="SubViewportContainer/SubViewport2/Player" method="ambil_kunci"]
 [connection signal="tree_exited" from="mapSpongbob/kunci/PP1" to="SubViewportContainer/SubViewport2/Player" method="add_key"]
@@ -553,12 +864,35 @@ horizontal_alignment = 2
 [connection signal="tree_exited" from="mapPatrick/kunci/PS3" to="SubViewportContainer2/SubViewport/patrick" method="add_key"]
 [connection signal="visibility_changed" from="mapPatrick/cerobong/C1/K" to="SubViewportContainer2/SubViewport/patrick" method="ambil_kunci"]
 [connection signal="visibility_changed" from="mapPatrick/cerobong/C2/K" to="SubViewportContainer2/SubViewport/patrick" method="ambil_kunci"]
+[connection signal="pressed" from="Button" to="pause" method="open"]
+[connection signal="pressed" from="Dead/retry" to="Dead" method="_on_retry_pressed"]
+[connection signal="pressed" from="Dead/quit" to="Dead" method="_on_quit_pressed"]
+[connection signal="pressed" from="pause/continue" to="pause" method="_on_continue_pressed"]
+[connection signal="pressed" from="pause/retry" to="pause" method="_on_retry_pressed"]
+[connection signal="pressed" from="pause/quit" to="pause" method="_on_quit_pressed"]
 
+[editable path="mapSpongbob/duri/DS1/Deadzone"]
+[editable path="mapSpongbob/duri/DS2/Deadzone2"]
 [editable path="mapSpongbob/cerobong/C1"]
 [editable path="mapSpongbob/cerobong/C1/Interactable"]
 [editable path="mapSpongbob/cerobong/C2"]
 [editable path="mapSpongbob/cerobong/C2/Interactable"]
+[editable path="mapPatrick/duri/DP3/Deadzone4"]
+[editable path="mapPatrick/duri/DP2/Deadzone3"]
+[editable path="mapPatrick/duri/DP1/Deadzone2"]
+[editable path="mapPatrick/duri/DP4/Deadzone5"]
 [editable path="mapPatrick/cerobong/C1"]
 [editable path="mapPatrick/cerobong/C1/Interactable"]
 [editable path="mapPatrick/cerobong/C2"]
 [editable path="mapPatrick/cerobong/C2/Interactable"]
+[editable path="dead/Deadzone"]
+[editable path="dead/Deadzone2"]
+[editable path="dead/Deadzone3"]
+[editable path="dead/Deadzone4"]
+[editable path="dead/Deadzone9"]
+[editable path="dead/Deadzone11"]
+[editable path="dead/Deadzone10"]
+[editable path="dead/Deadzone5"]
+[editable path="dead/Deadzone7"]
+[editable path="dead/Deadzone6"]
+[editable path="dead/Deadzone8"]

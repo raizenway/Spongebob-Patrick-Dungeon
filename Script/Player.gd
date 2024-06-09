@@ -10,6 +10,7 @@ var speed : float
 @export var run_speed : float = 5.0
 @export var jump_strength : float = 15.0
 @export var gravity : float = 50.0
+@export var nama: String
 
 const ANIMATION_BLEND : float = 7.0
 

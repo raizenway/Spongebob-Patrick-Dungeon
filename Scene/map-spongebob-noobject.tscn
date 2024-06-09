@@ -16,5 +16,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.3913, -4.76837e-07, 18.026
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.3971, 1.18521, 18.0514)
 
 [node name="atap-spongebob" parent="." instance=ExtResource("3_iiv06")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4135, 1.16785, 17.9802)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4135, 2.09633, 17.9802)
 visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://c7wnl0c1f6dbp"]
+[gd_scene load_steps=25 format=3 uid="uid://c7wnl0c1f6dbp"]
 
 [ext_resource type="PackedScene" uid="uid://ch7ondeij2147" path="res://Scene/map-spongebob-noobject.tscn" id="1_5kl0p"]
 [ext_resource type="PackedScene" uid="uid://ctj6ciyrlig0y" path="res://Assets/objek/framepongebob.glb" id="3_02g5s"]
@@ -8,24 +8,19 @@
 [ext_resource type="PackedScene" uid="uid://dxljp5784hide" path="res://Scene/gerbang.tscn" id="8_6mjt1"]
 [ext_resource type="PackedScene" uid="uid://cbexyypcgpwa0" path="res://Scene/kunci.tscn" id="10_nu6m0"]
 [ext_resource type="PackedScene" uid="uid://uunnptq8pq16" path="res://Scene/map-patrick-noobject.tscn" id="12_2cp16"]
+[ext_resource type="PackedScene" uid="uid://cr7ldt8pcnfiv" path="res://Scene/durifixx.tscn" id="12_kltv4"]
 [ext_resource type="PackedScene" uid="uid://dnv4o7jutrs68" path="res://Assets/objek/framepatrict.glb" id="13_5iead"]
 [ext_resource type="PackedScene" uid="uid://27bpbsyfxjbs" path="res://Scene/tombol.tscn" id="14_gpom0"]
 [ext_resource type="PackedScene" uid="uid://ugrp7bhxkiob" path="res://Scene/deadzone.tscn" id="15_lt0ef"]
 [ext_resource type="PackedScene" uid="uid://cdahw24bhwq48" path="res://Scene/patrick.tscn" id="16_0uco1"]
 [ext_resource type="Script" path="res://Script/Dead.gd" id="16_d72ev"]
 [ext_resource type="PackedScene" uid="uid://dh7y5dn521uqf" path="res://Scene/pintu.tscn" id="16_eh35o"]
-[ext_resource type="PackedScene" uid="uid://shl1anpxonfe" path="res://Scene/duri.tscn" id="17_bneth"]
 [ext_resource type="PackedScene" uid="uid://berprroiwpt7d" path="res://Scene/winzone.tscn" id="17_dppp1"]
+[ext_resource type="PackedScene" uid="uid://c4qo3o6d1od3g" path="res://Scene/tanah_1x_2.tscn" id="19_lpv0y"]
 [ext_resource type="Texture2D" uid="uid://bitjdtwhw2ch2" path="res://Assets/key.png" id="19_uwp4n"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_yo7lg"]
-size = Vector3(1.88823, 1, 1.50102)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ry3uy"]
 size = Vector3(1, 1.41504, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_hmd3x"]
-size = Vector3(1.48048, 1, 1.85206)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cowu6"]
 size = Vector3(1, 1.41504, 1)
@@ -48,27 +43,17 @@ size = Vector3(2.82584, 1, 4.01486)
 
 [node name="duri" type="Node3D" parent="mapSpongbob"]
 
-[node name="DS1" parent="mapSpongbob/duri" instance=ExtResource("17_bneth")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.057, 0, 19.738)
+[node name="DS1" parent="mapSpongbob/duri" instance=ExtResource("12_kltv4")]
+transform = Transform3D(0.505, 0, 0, 0, 0.505, 0, 0, 0, 0.505, -12.145, 1.81155, 18.4279)
 
-[node name="Deadzone" parent="mapSpongbob/duri/DS1" node_paths=PackedStringArray("dead_menu") instance=ExtResource("15_lt0ef")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -23.404, 1.39088, -15.5826)
+[node name="Deadzone" parent="mapSpongbob/duri/DS1" index="0" node_paths=PackedStringArray("dead_menu")]
 dead_menu = NodePath("../../../../Dead")
 
-[node name="CollisionShape3D" parent="mapSpongbob/duri/DS1/Deadzone" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.363472, 0, 0.126167)
-shape = SubResource("BoxShape3D_yo7lg")
+[node name="DP1" parent="mapSpongbob/duri" instance=ExtResource("12_kltv4")]
+transform = Transform3D(0.505, 0, 0, 0, 0.505, 0, 0, 0, 0.505, -8.83351, 1.81693, 3.50945)
 
-[node name="DS2" parent="mapSpongbob/duri" instance=ExtResource("17_bneth")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.057, 0, 19.738)
-
-[node name="Deadzone2" parent="mapSpongbob/duri/DS2" node_paths=PackedStringArray("dead_menu") instance=ExtResource("15_lt0ef")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -23.4035, 1.39088, -15.5766)
+[node name="Deadzone" parent="mapSpongbob/duri/DP1" index="0" node_paths=PackedStringArray("dead_menu")]
 dead_menu = NodePath("../../../../Dead")
-
-[node name="CollisionShape3D" parent="mapSpongbob/duri/DS2/Deadzone2" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.363472, 0, 0.126167)
-shape = SubResource("BoxShape3D_yo7lg")
 
 [node name="framepongebob" parent="mapSpongbob" instance=ExtResource("3_02g5s")]
 transform = Transform3D(0.0174504, -0.190715, 0.98149, -0.99584, -0.0911193, -4.56847e-10, 0.0894327, -0.977408, -0.191511, -12.9516, 2.31798, 23.6826)
@@ -78,17 +63,17 @@ transform = Transform3D(0.0174504, -0.190715, 0.98149, -0.99584, -0.0911193, -4.
 [node name="PS1" parent="mapSpongbob/pintu" node_paths=PackedStringArray("prompt", "player") instance=ExtResource("16_eh35o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.74121, 1.63926, 24.23)
 prompt = NodePath("../../../cmd")
-player = NodePath("../../../SubViewportContainer/SubViewport2/Player")
+player = NodePath("../../../SubViewportContainer/SubViewport2/spongbob")
 
 [node name="PS2" parent="mapSpongbob/pintu" node_paths=PackedStringArray("prompt", "player") instance=ExtResource("16_eh35o")]
 transform = Transform3D(-0.0579474, 0, 0.99832, 0, 1, 0, -0.99832, 0, -0.0579474, -12.8636, 1.63926, 22.4154)
 prompt = NodePath("../../../cmd")
-player = NodePath("../../../SubViewportContainer/SubViewport2/Player")
+player = NodePath("../../../SubViewportContainer/SubViewport2/spongbob")
 
 [node name="PS3" parent="mapSpongbob/pintu" node_paths=PackedStringArray("prompt", "player") instance=ExtResource("16_eh35o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.2437, 1.63926, 11.1379)
 prompt = NodePath("../../../cmd")
-player = NodePath("../../../SubViewportContainer/SubViewport2/Player")
+player = NodePath("../../../SubViewportContainer/SubViewport2/spongbob")
 
 [node name="batu" type="Node3D" parent="mapSpongbob"]
 
@@ -197,13 +182,13 @@ shape = SubResource("BoxShape3D_ry3uy")
 transform = Transform3D(0.0288463, 0, -0.999584, 0, 1, 0, 0.999584, 0, 0.0288463, 20.7092, 1.66026, 8.31073)
 prompt = NodePath("../../../cmd")
 pair = NodePath("../../../mapPatrick/cerobong/C1")
-player = NodePath("../../../SubViewportContainer/SubViewport2/Player")
+player = NodePath("../../../SubViewportContainer/SubViewport2/spongbob")
 
 [node name="C2" parent="mapSpongbob/cerobong" node_paths=PackedStringArray("prompt", "pair", "player") instance=ExtResource("6_mclp0")]
 transform = Transform3D(-0.0279915, 0, 0.999608, 0, 1, 0, -0.999608, 0, -0.0279915, -15.8566, 1.54715, 7.01668)
 prompt = NodePath("../../../cmd")
 pair = NodePath("../../../mapPatrick/cerobong/C2")
-player = NodePath("../../../SubViewportContainer/SubViewport2/Player")
+player = NodePath("../../../SubViewportContainer/SubViewport2/spongbob")
 
 [node name="tombol" type="Node3D" parent="mapSpongbob"]
 
@@ -272,47 +257,29 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -10.1953)
 
 [node name="duri" type="Node3D" parent="mapPatrick"]
 
-[node name="DP3" parent="mapPatrick/duri" instance=ExtResource("17_bneth")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.057, 0, 19.738)
+[node name="DP1" parent="mapPatrick/duri" instance=ExtResource("12_kltv4")]
+transform = Transform3D(-2.20743e-08, 0, 0.505, 0, 0.505, 0, -0.505, 0, -2.20743e-08, -22.7979, 1.81693, 6.12707)
 
-[node name="Deadzone4" parent="mapPatrick/duri/DP3" node_paths=PackedStringArray("dead_menu") instance=ExtResource("15_lt0ef")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1187, 1.39088, -15.4071)
+[node name="Deadzone" parent="mapPatrick/duri/DP1" index="0" node_paths=PackedStringArray("dead_menu")]
 dead_menu = NodePath("../../../../Dead")
 
-[node name="CollisionShape3D" parent="mapPatrick/duri/DP3/Deadzone4" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.588575, 0, 0.191359)
-shape = SubResource("BoxShape3D_hmd3x")
+[node name="DP2" parent="mapPatrick/duri" instance=ExtResource("12_kltv4")]
+transform = Transform3D(-2.20743e-08, 0, 0.505, 0, 0.505, 0, -0.505, 0, -2.20743e-08, -22.7979, 1.81693, -12.7913)
 
-[node name="DP2" parent="mapPatrick/duri" instance=ExtResource("17_bneth")]
-
-[node name="Deadzone3" parent="mapPatrick/duri/DP2" node_paths=PackedStringArray("dead_menu") instance=ExtResource("15_lt0ef")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -23.3985, 1.39088, -15.5815)
+[node name="Deadzone" parent="mapPatrick/duri/DP2" index="0" node_paths=PackedStringArray("dead_menu")]
 dead_menu = NodePath("../../../../Dead")
 
-[node name="CollisionShape3D" parent="mapPatrick/duri/DP2/Deadzone3" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.363472, 0, 0.126167)
-shape = SubResource("BoxShape3D_yo7lg")
+[node name="DP3" parent="mapPatrick/duri" instance=ExtResource("12_kltv4")]
+transform = Transform3D(0.505, 0, 0, 0, 0.505, 0, 0, 0, 0.505, -34.445, 1.81693, -16.9872)
 
-[node name="DP1" parent="mapPatrick/duri" instance=ExtResource("17_bneth")]
-
-[node name="Deadzone2" parent="mapPatrick/duri/DP1" node_paths=PackedStringArray("dead_menu") instance=ExtResource("15_lt0ef")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -23.3985, 1.39088, -15.5826)
+[node name="Deadzone" parent="mapPatrick/duri/DP3" index="0" node_paths=PackedStringArray("dead_menu")]
 dead_menu = NodePath("../../../../Dead")
 
-[node name="CollisionShape3D" parent="mapPatrick/duri/DP1/Deadzone2" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.363472, 0, 0.126167)
-shape = SubResource("BoxShape3D_yo7lg")
+[node name="DP4" parent="mapPatrick/duri" instance=ExtResource("12_kltv4")]
+transform = Transform3D(0.505, 0, 0, 0, 0.505, 0, 0, 0, 0.505, -59.6176, 1.81693, -4.10555)
 
-[node name="DP4" parent="mapPatrick/duri" instance=ExtResource("17_bneth")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.057, 0, 19.738)
-
-[node name="Deadzone5" parent="mapPatrick/duri/DP4" node_paths=PackedStringArray("dead_menu") instance=ExtResource("15_lt0ef")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1119, 1.39088, -15.4029)
+[node name="Deadzone" parent="mapPatrick/duri/DP4" index="0" node_paths=PackedStringArray("dead_menu")]
 dead_menu = NodePath("../../../../Dead")
-
-[node name="CollisionShape3D" parent="mapPatrick/duri/DP4/Deadzone5" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.588575, 0, 0.191359)
-shape = SubResource("BoxShape3D_hmd3x")
 
 [node name="framepatrict" parent="mapPatrick" instance=ExtResource("13_5iead")]
 transform = Transform3D(0.357987, 0.904679, -0.231086, -0.903581, 0.398031, 0.15847, 0.235344, 0.152075, 0.959941, -38.9477, 2.85415, -9.96323)
@@ -466,7 +433,7 @@ pintu = NodePath("../../../mapSpongbob/duri/DS1")
 [node name="DS2" parent="mapPatrick/tombol" node_paths=PackedStringArray("prompt", "pintu") instance=ExtResource("14_gpom0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0845, 1.59721, -17.7506)
 prompt = NodePath("../../../cmd")
-pintu = NodePath("../../../mapSpongbob/duri/DS2")
+pintu = NodePath(".")
 
 [node name="GS1" parent="mapPatrick/tombol" node_paths=PackedStringArray("prompt", "pintu") instance=ExtResource("14_gpom0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.55144, 1.59721, -6.89272)
@@ -615,8 +582,8 @@ handle_input_locally = false
 size = Vector2i(965, 1080)
 render_target_update_mode = 4
 
-[node name="Player" parent="SubViewportContainer/SubViewport2" node_paths=PackedStringArray("uikey") instance=ExtResource("3_srxqr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.0648, 1.8493, 17.5761)
+[node name="spongbob" parent="SubViewportContainer/SubViewport2" node_paths=PackedStringArray("uikey") instance=ExtResource("3_srxqr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.8609, 1.8493, 17.5536)
 uikey = NodePath("../../../keyS")
 
 [node name="SubViewportContainer2" type="SubViewportContainer" parent="."]
@@ -636,7 +603,7 @@ size = Vector2i(965, 1080)
 render_target_update_mode = 4
 
 [node name="patrick" parent="SubViewportContainer2/SubViewport" node_paths=PackedStringArray("uikey") instance=ExtResource("16_0uco1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5866, 1.62455, -9.38853)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2509, 1.62455, -9.50236)
 uikey = NodePath("../../../keyP")
 
 [node name="cmd" type="Label" parent="."]
@@ -915,11 +882,32 @@ theme_override_font_sizes/font_size = 100
 text = "YOU WIN"
 horizontal_alignment = 1
 
-[connection signal="visibility_changed" from="mapSpongbob/cerobong/C1/K" to="SubViewportContainer/SubViewport2/Player" method="ambil_kunci"]
-[connection signal="visibility_changed" from="mapSpongbob/cerobong/C2/K" to="SubViewportContainer/SubViewport2/Player" method="ambil_kunci"]
-[connection signal="tree_exited" from="mapSpongbob/kunci/PP1" to="SubViewportContainer/SubViewport2/Player" method="add_key"]
-[connection signal="tree_exited" from="mapSpongbob/kunci/PP2" to="SubViewportContainer/SubViewport2/Player" method="add_key"]
-[connection signal="tree_exited" from="mapSpongbob/kunci/PP3" to="SubViewportContainer/SubViewport2/Player" method="add_key"]
+[node name="tanah-1x9" parent="." instance=ExtResource("19_lpv0y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.26602, 0, 8.81776)
+
+[node name="tanah-1x2" parent="." instance=ExtResource("19_lpv0y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.03786, 0, -2.31655)
+
+[node name="tanah-1x6" parent="." instance=ExtResource("19_lpv0y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.8033, 0, -27.3143)
+
+[node name="tanah-1x7" parent="." instance=ExtResource("19_lpv0y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.39432, 0, 24.7543)
+
+[node name="tanah-1x3" parent="." instance=ExtResource("19_lpv0y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9966, 0, 3.32891)
+
+[node name="tanah-1x4" parent="." instance=ExtResource("19_lpv0y")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -18.0425, 0, 16.3958)
+
+[node name="tanah-1x5" parent="." instance=ExtResource("19_lpv0y")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.8538, 0, -15.8103)
+
+[connection signal="visibility_changed" from="mapSpongbob/cerobong/C1/K" to="SubViewportContainer/SubViewport2/spongbob" method="ambil_kunci"]
+[connection signal="visibility_changed" from="mapSpongbob/cerobong/C2/K" to="SubViewportContainer/SubViewport2/spongbob" method="ambil_kunci"]
+[connection signal="tree_exited" from="mapSpongbob/kunci/PP1" to="SubViewportContainer/SubViewport2/spongbob" method="add_key"]
+[connection signal="tree_exited" from="mapSpongbob/kunci/PP2" to="SubViewportContainer/SubViewport2/spongbob" method="add_key"]
+[connection signal="tree_exited" from="mapSpongbob/kunci/PP3" to="SubViewportContainer/SubViewport2/spongbob" method="add_key"]
 [connection signal="tree_exited" from="mapPatrick/kunci/PS1" to="SubViewportContainer2/SubViewport/patrick" method="add_key"]
 [connection signal="tree_exited" from="mapPatrick/kunci/PS2" to="SubViewportContainer2/SubViewport/patrick" method="add_key"]
 [connection signal="tree_exited" from="mapPatrick/kunci/PS3" to="SubViewportContainer2/SubViewport/patrick" method="add_key"]
@@ -933,16 +921,22 @@ horizontal_alignment = 1
 [connection signal="pressed" from="pause/quit" to="pause" method="_on_quit_pressed"]
 [connection signal="pressed" from="win/quit" to="win" method="_on_quit_pressed"]
 
+[editable path="mapSpongbob/duri/DS1"]
 [editable path="mapSpongbob/duri/DS1/Deadzone"]
-[editable path="mapSpongbob/duri/DS2/Deadzone2"]
+[editable path="mapSpongbob/duri/DP1"]
+[editable path="mapSpongbob/duri/DP1/Deadzone"]
 [editable path="mapSpongbob/cerobong/C1"]
 [editable path="mapSpongbob/cerobong/C1/Interactable"]
 [editable path="mapSpongbob/cerobong/C2"]
 [editable path="mapSpongbob/cerobong/C2/Interactable"]
-[editable path="mapPatrick/duri/DP3/Deadzone4"]
-[editable path="mapPatrick/duri/DP2/Deadzone3"]
-[editable path="mapPatrick/duri/DP1/Deadzone2"]
-[editable path="mapPatrick/duri/DP4/Deadzone5"]
+[editable path="mapPatrick/duri/DP1"]
+[editable path="mapPatrick/duri/DP1/Deadzone"]
+[editable path="mapPatrick/duri/DP2"]
+[editable path="mapPatrick/duri/DP2/Deadzone"]
+[editable path="mapPatrick/duri/DP3"]
+[editable path="mapPatrick/duri/DP3/Deadzone"]
+[editable path="mapPatrick/duri/DP4"]
+[editable path="mapPatrick/duri/DP4/Deadzone"]
 [editable path="mapPatrick/cerobong/C1"]
 [editable path="mapPatrick/cerobong/C1/Interactable"]
 [editable path="mapPatrick/cerobong/C2"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c7wnl0c1f6dbp"]
+[gd_scene load_steps=26 format=3 uid="uid://c7wnl0c1f6dbp"]
 
 [ext_resource type="PackedScene" uid="uid://ch7ondeij2147" path="res://Scene/map-spongebob-noobject.tscn" id="1_5kl0p"]
 [ext_resource type="PackedScene" uid="uid://ctj6ciyrlig0y" path="res://Assets/objek/framepongebob.glb" id="3_02g5s"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" path="res://Script/Dead.gd" id="16_d72ev"]
 [ext_resource type="PackedScene" uid="uid://dh7y5dn521uqf" path="res://Scene/pintu.tscn" id="16_eh35o"]
 [ext_resource type="PackedScene" uid="uid://shl1anpxonfe" path="res://Scene/duri.tscn" id="17_bneth"]
+[ext_resource type="PackedScene" uid="uid://berprroiwpt7d" path="res://Scene/winzone.tscn" id="17_dppp1"]
 [ext_resource type="Texture2D" uid="uid://bitjdtwhw2ch2" path="res://Assets/key.png" id="19_uwp4n"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yo7lg"]
@@ -596,6 +597,15 @@ dead_menu = NodePath("../../Dead")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0376434, 0, 0.0726871)
 shape = SubResource("BoxShape3D_me50p")
 
+[node name="Winzone" parent="." node_paths=PackedStringArray("winmenu") instance=ExtResource("17_dppp1")]
+winmenu = NodePath("../win")
+
+[node name="CollisionShape3D" parent="Winzone" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.4964, 3.30119, 11.1536)
+
+[node name="CollisionShape3D2" parent="Winzone" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.5422, 2.30953, -14.8739)
+
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 offset_right = 965.0
 offset_bottom = 1080.0
@@ -850,8 +860,59 @@ offset_top = 177.0
 offset_right = 359.0
 offset_bottom = 314.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 text = "PAUSE GAME"
+horizontal_alignment = 1
+
+[node name="win" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("16_d72ev")
+
+[node name="ColorRect" type="ColorRect" parent="win"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.713726)
+
+[node name="quit" type="Button" parent="win"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = 90.0
+offset_right = 152.0
+offset_bottom = 167.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "MAIN MENU"
+
+[node name="Label" type="Label" parent="win"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -359.0
+offset_top = 177.0
+offset_right = 359.0
+offset_bottom = 314.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "YOU WIN"
 horizontal_alignment = 1
 
 [connection signal="visibility_changed" from="mapSpongbob/cerobong/C1/K" to="SubViewportContainer/SubViewport2/Player" method="ambil_kunci"]
@@ -870,6 +931,7 @@ horizontal_alignment = 1
 [connection signal="pressed" from="pause/continue" to="pause" method="_on_continue_pressed"]
 [connection signal="pressed" from="pause/retry" to="pause" method="_on_retry_pressed"]
 [connection signal="pressed" from="pause/quit" to="pause" method="_on_quit_pressed"]
+[connection signal="pressed" from="win/quit" to="win" method="_on_quit_pressed"]
 
 [editable path="mapSpongbob/duri/DS1/Deadzone"]
 [editable path="mapSpongbob/duri/DS2/Deadzone2"]
@@ -896,3 +958,4 @@ horizontal_alignment = 1
 [editable path="dead/Deadzone7"]
 [editable path="dead/Deadzone6"]
 [editable path="dead/Deadzone8"]
+[editable path="Winzone"]

@@ -8,12 +8,14 @@ var playback = null
 @export var prompt_message = "Buka Pintu"
 @export var prompt_action = "interact"
 @export var player: CharacterBody3D
+@onready var suaraPintu = $suaraPintu
 
 func open_door():
 	if !open:
 		open = !open
 		animation_player.play("open")
 		open = true
+		suaraPintu.play()
 
 func get_prompt():
 	var key_name = ""

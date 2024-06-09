@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dxljp5784hide"]
+[gd_scene load_steps=11 format=3 uid="uid://dxljp5784hide"]
 
 [ext_resource type="PackedScene" uid="uid://e48cm6a670vq" path="res://Assets/rintangan/gerbang.glb" id="1_apobo"]
 [ext_resource type="Script" path="res://Script/gerbang.gd" id="2_p7pp1"]
+[ext_resource type="AudioStream" uid="uid://cwcvkpc1ah74u" path="res://Assets/sound/sfx/suaraGerbang.mp3" id="3_8d2ov"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_kdpl5"]
 points = PackedVector3Array(0.999979, 0.999979, 1, 0.999979, -1, 1, 0.999979, 0.999979, -1, -1, 0.999979, 1, -1, -1, 1, 0.999979, -1, -1, -1, 0.999979, -1, -1, -1, -1)
@@ -81,3 +82,6 @@ shape = SubResource("ConvexPolygonShape3D_hbeoh")
 libraries = {
 "": SubResource("AnimationLibrary_biep7")
 }
+
+[node name="suaraGerbang" type="AudioStreamPlayer2D" parent="." index="5"]
+stream = ExtResource("3_8d2ov")

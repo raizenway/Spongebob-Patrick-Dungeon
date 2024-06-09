@@ -1,14 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://ugrp7bhxkiob"]
+[gd_scene load_steps=4 format=3 uid="uid://ugrp7bhxkiob"]
 
 [ext_resource type="Script" path="res://Script/deadzone.gd" id="1_juxjf"]
+[ext_resource type="AudioStream" uid="uid://dk1sm6ykt5r2d" path="res://Assets/sound/sfx/suaraMati.mp3" id="2_vxjim"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yywp3"]
-size = Vector3(6.22583, 1.71301, 2.9801)
 
 [node name="Deadzone" type="Area3D"]
 script = ExtResource("1_juxjf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_yywp3")
+
+[node name="suaraMati" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_vxjim")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

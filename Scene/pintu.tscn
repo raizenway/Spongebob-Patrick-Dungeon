@@ -1,9 +1,10 @@
-[gd_scene load_steps=41 format=3 uid="uid://dh7y5dn521uqf"]
+[gd_scene load_steps=42 format=3 uid="uid://dh7y5dn521uqf"]
 
 [ext_resource type="Texture2D" uid="uid://cugmxbpmnndij" path="res://Assets/rintangan/pintu_cave.jpg" id="1_fgifl"]
 [ext_resource type="Script" path="res://Script/pintu.gd" id="1_vh6kl"]
 [ext_resource type="Texture2D" uid="uid://b3v2tgqfayrk0" path="res://Assets/rintangan/pintu_texture-besi.jpg" id="2_wr81t"]
 [ext_resource type="PackedScene" uid="uid://b8230pyph27u" path="res://Scene/interactable.tscn" id="4_7wbaf"]
+[ext_resource type="AudioStream" uid="uid://bvlxy8ey1kskg" path="res://Assets/sound/sfx/suaraPintu.mp3" id="5_w1dn5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_chq7d"]
 resource_name = "Material.005"
@@ -483,21 +484,6 @@ shadow_mesh = SubResource("ArrayMesh_qybw5")
 [sub_resource type="BoxShape3D" id="BoxShape3D_ce4wo"]
 size = Vector3(0.15387, 1.44717, 0.710449)
 
-[sub_resource type="Animation" id="Animation_kc56p"]
-resource_name = "open"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Node3D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_5n480"]
 length = 0.001
 tracks/0/type = "value"
@@ -511,6 +497,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kc56p"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_epj2u"]
@@ -594,6 +595,9 @@ libraries = {
 [node name="CollisionShape3D" parent="Interactable" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0022583, 0.575775, -0.0471191)
 shape = SubResource("BoxShape3D_ac1bg")
+
+[node name="suaraPintu" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_w1dn5")
 
 [connection signal="focused" from="Interactable" to="." method="_on_interactable_focused"]
 [connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]

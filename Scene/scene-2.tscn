@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://es0k6qkt6od8"]
+
+[ext_resource type="Script" path="res://Script/scene-2.gd" id="1_edtho"]
+[ext_resource type="Texture2D" uid="uid://c1v7hpys8rivy" path="res://Assets/2d/Scene/Scene 2.png" id="1_xp3y1"]
+[ext_resource type="FontFile" uid="uid://c3eaaq0hdgce0" path="res://Assets/font/Unbounded-VariableFont_wght.ttf" id="2_iwccu"]
+
+[sub_resource type="Theme" id="Theme_27muc"]
+
+[sub_resource type="Theme" id="Theme_yrawg"]
+default_font = ExtResource("2_iwccu")
+default_font_size = 34
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_edtho")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Scene2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(962.5, 540)
+scale = Vector2(1.00156, 1)
+texture = ExtResource("1_xp3y1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 38.0
+offset_top = 718.0
+offset_right = 1880.0
+offset_bottom = 1043.0
+
+[node name="TextEdit" type="TextEdit" parent="MarginContainer"]
+layout_mode = 2
+theme = SubResource("Theme_27muc")
+theme_override_fonts/font = ExtResource("2_iwccu")
+theme_override_font_sizes/font_size = 34
+text = "Saat mereka berjalan-jalan mengelilingi pulau yang indah ini, mereka tidak sengaja melihat dua pintu goa yang menarik perhatian mereka. Terdapat dua pintu dari goa tersebut, dikarenakan rasa penasaran yang tinggi dari mereka. Mereka memutuskan untuk mencoba masuk ke dalam goa tersebut secara terpisah."
+wrap_mode = 1
+
+[node name="Next" type="Button" parent="."]
+offset_left = 1651.0
+offset_top = 19.0
+offset_right = 1858.0
+offset_bottom = 122.0
+theme = SubResource("Theme_yrawg")
+text = "Next"
+
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]

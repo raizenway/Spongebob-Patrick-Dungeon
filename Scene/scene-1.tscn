@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://dmn3d6i3s48bd"]
+
+[ext_resource type="Script" path="res://Script/scene-1.gd" id="1_bby4k"]
+[ext_resource type="Texture2D" uid="uid://blu2ouxomvyi" path="res://Assets/2d/Scene/Scene 1.png" id="1_g5and"]
+[ext_resource type="FontFile" uid="uid://c3eaaq0hdgce0" path="res://Assets/font/Unbounded-VariableFont_wght.ttf" id="2_sjxa5"]
+
+[sub_resource type="Theme" id="Theme_lq3ii"]
+
+[sub_resource type="Theme" id="Theme_3dt05"]
+default_font = ExtResource("2_sjxa5")
+default_font_size = 34
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_bby4k")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Scene1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(945, 530)
+texture = ExtResource("1_g5and")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 38.0
+offset_top = 718.0
+offset_right = 1880.0
+offset_bottom = 1043.0
+
+[node name="TextEdit" type="TextEdit" parent="MarginContainer"]
+layout_mode = 2
+theme = SubResource("Theme_lq3ii")
+theme_override_fonts/font = ExtResource("2_sjxa5")
+theme_override_font_sizes/font_size = 34
+text = "Kisah dimulai saat liburan musim panas di Bikini Bottom. Spongebob dan Patrick memutuskan untuk menghabiskan waktu liburannya di suatu pulau tropis yang hangat dan asri. Mereka menghabiskan waktu disana dengan bersenang-senang seperti bermain, berlarian, atau sekedar berkeliling pulau."
+wrap_mode = 1
+
+[node name="Next" type="Button" parent="."]
+offset_left = 1651.0
+offset_top = 19.0
+offset_right = 1858.0
+offset_bottom = 122.0
+theme = SubResource("Theme_3dt05")
+text = "Next"
+
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]

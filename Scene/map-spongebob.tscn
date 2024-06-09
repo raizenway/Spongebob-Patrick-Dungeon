@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://dlnxbx7grau21"]
 
-[ext_resource type="PackedScene" path="res://Assets/map spongebob/jalan_spongebob.tscn" id="2_22p6d"]
-[ext_resource type="PackedScene" path="res://Assets/map spongebob/tembok_spongebob.tscn" id="3_iyv47"]
+[ext_resource type="PackedScene" uid="uid://i8ykgq6t6yn2" path="res://Assets/map spongebob/jalan_spongebob.tscn" id="2_22p6d"]
+[ext_resource type="PackedScene" uid="uid://4fqp7oea641a" path="res://Assets/map spongebob/tembok_spongebob.tscn" id="3_iyv47"]
 [ext_resource type="PackedScene" uid="uid://chjnlf1fget54" path="res://Assets/map spongebob/atap-spongebob.glb" id="4_pf3ew"]
 [ext_resource type="PackedScene" uid="uid://k481fkrd1j78" path="res://Assets/rintangan/duri.glb" id="5_cjm8h"]
 [ext_resource type="PackedScene" uid="uid://ctj6ciyrlig0y" path="res://Assets/objek/framepongebob.glb" id="6_hglis"]

@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://n0qqj0tneiqa"]
+
+[ext_resource type="Script" path="res://Script/scene-3.gd" id="1_qhvve"]
+[ext_resource type="Texture2D" uid="uid://jpy76ksusfoy" path="res://Assets/2d/Scene/Scene 3.png" id="1_t51nf"]
+[ext_resource type="FontFile" uid="uid://c3eaaq0hdgce0" path="res://Assets/font/Unbounded-VariableFont_wght.ttf" id="2_iw4xy"]
+
+[sub_resource type="Theme" id="Theme_oquvl"]
+
+[sub_resource type="Theme" id="Theme_t0jni"]
+default_font = ExtResource("2_iw4xy")
+default_font_size = 34
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_qhvve")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Scene3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(958, 539)
+texture = ExtResource("1_t51nf")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 38.0
+offset_top = 718.0
+offset_right = 1880.0
+offset_bottom = 1043.0
+
+[node name="TextEdit" type="TextEdit" parent="MarginContainer"]
+layout_mode = 2
+theme = SubResource("Theme_oquvl")
+theme_override_fonts/font = ExtResource("2_iw4xy")
+theme_override_font_sizes/font_size = 34
+text = "Sesaat mereka masuk ke goa tersebut secara bersamaan, tiba-tiba pintu masuk goa tersebut tertutup dan mereka pun tak dapat kembali lagi. Meski mereka berada pada pintu goa yang berbeda, entah kenapa mereka tetap bisa berkomunikasi satu sama lain. Mereka pun mencari jalan keluar dari goa ini. Akankah mereka berhasil keluar hidup-hidup?"
+wrap_mode = 1
+
+[node name="Play" type="Button" parent="."]
+offset_left = 1651.0
+offset_top = 19.0
+offset_right = 1858.0
+offset_bottom = 122.0
+theme = SubResource("Theme_t0jni")
+text = "Next"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

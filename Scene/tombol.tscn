@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://27bpbsyfxjbs"]
 
 [ext_resource type="Script" path="res://Script/tombol.gd" id="1_n0lr4"]
-[ext_resource type="PackedScene" uid="uid://b8230pyph27u" path="res://Scene/interactable.tscn" id="2_fx8x1"]
+[ext_resource type="PackedScene" path="res://Scene/interactable.tscn" id="2_fx8x1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ku3hb"]
 resource_name = "Material"
@@ -111,9 +111,5 @@ theme_override_font_sizes/font_size = 20
 text = "Press
 []"
 horizontal_alignment = 1
-
-[connection signal="focused" from="Interactable" to="." method="_on_interactable_focused"]
-[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
-[connection signal="unfocused" from="Interactable" to="." method="_on_interactable_unfocused"]
 
 [editable path="Interactable"]

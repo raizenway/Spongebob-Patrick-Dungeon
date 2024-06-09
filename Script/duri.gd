@@ -5,6 +5,9 @@ extends Node3D
 var playback = null
 @onready var anim = $AnimationPlayer
 
+func _ready():
+	print(transform)
+
 func open_door():
 	if !open:
 		open = !open

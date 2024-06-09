@@ -745,7 +745,7 @@ nodes/iwr_blend/position = Vector2(420, 160)
 nodes/output/position = Vector2(860, 160)
 node_connections = [&"ground_air_transition", 0, &"iwr_blend", &"ground_air_transition", 1, &"Air", &"iwr_blend", 0, &"Idle", &"iwr_blend", 1, &"Walk", &"iwr_blend", 2, &"Run", &"output", 0, &"ground_air_transition"]
 
-[node name="Player" type="CharacterBody3D"]
+[node name="spongbob" type="CharacterBody3D"]
 script = ExtResource("1_jb3lc")
 controls = ExtResource("2_5c2cr")
 

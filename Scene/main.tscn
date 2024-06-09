@@ -1,45 +1,25 @@
-[gd_scene load_steps=25 format=3 uid="uid://c7wnl0c1f6dbp"]
+[gd_scene load_steps=17 format=3 uid="uid://c7wnl0c1f6dbp"]
 
 [ext_resource type="PackedScene" uid="uid://ch7ondeij2147" path="res://Scene/map-spongebob-noobject.tscn" id="1_5kl0p"]
-[ext_resource type="PackedScene" uid="uid://k481fkrd1j78" path="res://Assets/rintangan/duri.glb" id="2_l702r"]
 [ext_resource type="PackedScene" uid="uid://ctj6ciyrlig0y" path="res://Assets/objek/framepongebob.glb" id="3_02g5s"]
 [ext_resource type="PackedScene" uid="uid://87tlsv5wnel8" path="res://Scene/spongbob.tscn" id="3_srxqr"]
-[ext_resource type="PackedScene" uid="uid://cd7jta6c1osp" path="res://Assets/rintangan/pintu.glb" id="4_a2rlh"]
 [ext_resource type="PackedScene" uid="uid://blhdys4bmlv37" path="res://Assets/objek/batu.fiksglb.glb" id="5_2rgir"]
-[ext_resource type="PackedScene" uid="uid://4e4go5ea7sjn" path="res://Assets/rintangan/cerobong.glb" id="6_8evxr"]
-[ext_resource type="PackedScene" uid="uid://68vhg6rbk8j8" path="res://Assets/objek/tombol.glb" id="7_5hp6q"]
+[ext_resource type="PackedScene" uid="uid://34wih7vw2otn" path="res://Scene/cerobong.tscn" id="6_mclp0"]
 [ext_resource type="PackedScene" uid="uid://dxljp5784hide" path="res://Scene/gerbang.tscn" id="8_6mjt1"]
-[ext_resource type="PackedScene" uid="uid://e48cm6a670vq" path="res://Assets/rintangan/gerbang.glb" id="8_7io42"]
-[ext_resource type="PackedScene" uid="uid://bp2pt16isa7d3" path="res://Assets/objek/kunci1.glb" id="9_doeos"]
-[ext_resource type="PackedScene" uid="uid://bgmnqpp2a3qk4" path="res://Assets/mob/spider.glb" id="10_tfhpa"]
-[ext_resource type="PackedScene" uid="uid://dj2nfe62hpn35" path="res://Assets/objek/tali.glb" id="11_e304h"]
+[ext_resource type="PackedScene" uid="uid://cbexyypcgpwa0" path="res://Scene/kunci.tscn" id="10_nu6m0"]
 [ext_resource type="PackedScene" uid="uid://uunnptq8pq16" path="res://Scene/map-patrick-noobject.tscn" id="12_2cp16"]
 [ext_resource type="PackedScene" uid="uid://dnv4o7jutrs68" path="res://Assets/objek/framepatrict.glb" id="13_5iead"]
 [ext_resource type="PackedScene" uid="uid://27bpbsyfxjbs" path="res://Scene/tombol.tscn" id="14_gpom0"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ftsfi"]
-size = Vector3(1, 2.83743, 1.99158)
+[ext_resource type="PackedScene" uid="uid://cdahw24bhwq48" path="res://Scene/patrick.tscn" id="16_0uco1"]
+[ext_resource type="PackedScene" uid="uid://dh7y5dn521uqf" path="res://Scene/pintu.tscn" id="16_eh35o"]
+[ext_resource type="PackedScene" uid="uid://shl1anpxonfe" path="res://Scene/duri.tscn" id="17_bneth"]
+[ext_resource type="Texture2D" uid="uid://bitjdtwhw2ch2" path="res://Assets/key.png" id="19_uwp4n"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ry3uy"]
 size = Vector3(1, 1.41504, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_8jk4b"]
-size = Vector3(1, 0.725, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_wvfxk"]
-size = Vector3(0.355, 3, 2)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_cowu6"]
 size = Vector3(1, 1.41504, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_m3dol"]
-size = Vector3(0.355, 3, 2)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_n274f"]
-size = Vector3(1, 2.83743, 1.99158)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_q88u5"]
-size = Vector3(1, 0.725, 1)
 
 [node name="main" type="Node3D"]
 
@@ -47,77 +27,31 @@ size = Vector3(1, 0.725, 1)
 
 [node name="duri" type="Node3D" parent="mapSpongbob"]
 
-[node name="DS1" type="Node3D" parent="mapSpongbob/duri"]
+[node name="DS1" parent="mapSpongbob/duri" instance=ExtResource("17_bneth")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.057, 0, 19.738)
 
-[node name="duri" parent="mapSpongbob/duri/DS1" instance=ExtResource("2_l702r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.82747, 1.34971, 18.6421)
-
-[node name="duri2" parent="mapSpongbob/duri/DS1" instance=ExtResource("2_l702r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.82747, 1.34971, 18.1236)
-
-[node name="duri3" parent="mapSpongbob/duri/DS1" instance=ExtResource("2_l702r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.82747, 1.34971, 17.5802)
-
-[node name="duri4" parent="mapSpongbob/duri/DS1" instance=ExtResource("2_l702r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8108, 1.34971, 18.6421)
-
-[node name="duri5" parent="mapSpongbob/duri/DS1" instance=ExtResource("2_l702r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8108, 1.34971, 18.1236)
-
-[node name="duri6" parent="mapSpongbob/duri/DS1" instance=ExtResource("2_l702r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8108, 1.34971, 17.5802)
-
-[node name="DS2" type="Node3D" parent="mapSpongbob/duri"]
-
-[node name="duri7" parent="mapSpongbob/duri/DS2" instance=ExtResource("2_l702r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.14896, 1.3435, 3.53234)
-
-[node name="duri8" parent="mapSpongbob/duri/DS2" instance=ExtResource("2_l702r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.14896, 1.3435, 3.01387)
-
-[node name="duri9" parent="mapSpongbob/duri/DS2" instance=ExtResource("2_l702r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.14896, 1.3435, 2.47049)
-
-[node name="duri10" parent="mapSpongbob/duri/DS2" instance=ExtResource("2_l702r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.13235, 1.3435, 3.53234)
-
-[node name="duri11" parent="mapSpongbob/duri/DS2" instance=ExtResource("2_l702r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.13235, 1.3435, 3.01387)
-
-[node name="duri12" parent="mapSpongbob/duri/DS2" instance=ExtResource("2_l702r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.13235, 1.3435, 2.47049)
+[node name="DS2" parent="mapSpongbob/duri" instance=ExtResource("17_bneth")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.057, 0, 19.738)
 
 [node name="framepongebob" parent="mapSpongbob" instance=ExtResource("3_02g5s")]
 transform = Transform3D(0.0174504, -0.190715, 0.98149, -0.99584, -0.0911193, -4.56847e-10, 0.0894327, -0.977408, -0.191511, -12.9516, 2.31798, 23.6826)
 
 [node name="pintu" type="Node3D" parent="mapSpongbob"]
 
-[node name="PS1" parent="mapSpongbob/pintu" instance=ExtResource("4_a2rlh")]
+[node name="PS1" parent="mapSpongbob/pintu" node_paths=PackedStringArray("prompt", "player") instance=ExtResource("16_eh35o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.74121, 1.63926, 24.23)
+prompt = NodePath("../../../cmd")
+player = NodePath("../../../SubViewportContainer/SubViewport2/Player")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="mapSpongbob/pintu/PS1"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mapSpongbob/pintu/PS1/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3292, 0.0131226)
-shape = SubResource("BoxShape3D_ftsfi")
-
-[node name="PS2" parent="mapSpongbob/pintu" instance=ExtResource("4_a2rlh")]
+[node name="PS2" parent="mapSpongbob/pintu" node_paths=PackedStringArray("prompt", "player") instance=ExtResource("16_eh35o")]
 transform = Transform3D(-0.0579474, 0, 0.99832, 0, 1, 0, -0.99832, 0, -0.0579474, -12.8636, 1.63926, 22.4154)
+prompt = NodePath("../../../cmd")
+player = NodePath("../../../SubViewportContainer/SubViewport2/Player")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="mapSpongbob/pintu/PS2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mapSpongbob/pintu/PS2/StaticBody3D"]
-transform = Transform3D(1, 0, -3.72529e-09, 0, 1, 0, 3.72529e-09, 0, 1, 0, 1.3292, 0.0131226)
-shape = SubResource("BoxShape3D_ftsfi")
-
-[node name="PS3" parent="mapSpongbob/pintu" instance=ExtResource("4_a2rlh")]
+[node name="PS3" parent="mapSpongbob/pintu" node_paths=PackedStringArray("prompt", "player") instance=ExtResource("16_eh35o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.2437, 1.63926, 11.1379)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="mapSpongbob/pintu/PS3"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mapSpongbob/pintu/PS3/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3292, 0.0131226)
-shape = SubResource("BoxShape3D_ftsfi")
+prompt = NodePath("../../../cmd")
+player = NodePath("../../../SubViewportContainer/SubViewport2/Player")
 
 [node name="batu" type="Node3D" parent="mapSpongbob"]
 
@@ -222,242 +156,94 @@ shape = SubResource("BoxShape3D_ry3uy")
 
 [node name="cerobong" type="Node3D" parent="mapSpongbob"]
 
-[node name="C1" parent="mapSpongbob/cerobong" instance=ExtResource("6_8evxr")]
-transform = Transform3D(0.0288463, 0, -0.999584, 0, 1, 0, 0.999584, 0, 0.0288463, 2.14429, 1.66026, 7.85228)
+[node name="C1" parent="mapSpongbob/cerobong" node_paths=PackedStringArray("prompt", "pair", "player") instance=ExtResource("6_mclp0")]
+transform = Transform3D(0.0288463, 0, -0.999584, 0, 1, 0, 0.999584, 0, 0.0288463, 20.7092, 1.66026, 8.31073)
+prompt = NodePath("../../../cmd")
+pair = NodePath("../../../mapPatrick/cerobong/C1")
+player = NodePath("../../../SubViewportContainer/SubViewport2/Player")
 
-[node name="C2" parent="mapSpongbob/cerobong" instance=ExtResource("6_8evxr")]
+[node name="C2" parent="mapSpongbob/cerobong" node_paths=PackedStringArray("prompt", "pair", "player") instance=ExtResource("6_mclp0")]
 transform = Transform3D(-0.0279915, 0, 0.999608, 0, 1, 0, -0.999608, 0, -0.0279915, -15.8566, 1.54715, 7.01668)
+prompt = NodePath("../../../cmd")
+pair = NodePath("../../../mapPatrick/cerobong/C2")
+player = NodePath("../../../SubViewportContainer/SubViewport2/Player")
 
 [node name="tombol" type="Node3D" parent="mapSpongbob"]
 
-[node name="GP1" parent="mapSpongbob/tombol" instance=ExtResource("7_5hp6q")]
+[node name="GP1" parent="mapSpongbob/tombol" node_paths=PackedStringArray("prompt", "pintu") instance=ExtResource("14_gpom0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.52205, 1.5, 8.8379)
+prompt = NodePath("../../../cmd")
+pintu = NodePath("../../../mapPatrick/gerbang/GP1")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="mapSpongbob/tombol/GP1"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mapSpongbob/tombol/GP1/StaticBody3D"]
-shape = SubResource("BoxShape3D_8jk4b")
-
-[node name="GP2" parent="mapSpongbob/tombol" instance=ExtResource("7_5hp6q")]
+[node name="GP2" parent="mapSpongbob/tombol" node_paths=PackedStringArray("prompt", "pintu") instance=ExtResource("14_gpom0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.7385, 1.5, 20.2139)
+prompt = NodePath("../../../cmd")
+pintu = NodePath("../../../mapPatrick/gerbang/GP2")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="mapSpongbob/tombol/GP2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mapSpongbob/tombol/GP2/StaticBody3D"]
-shape = SubResource("BoxShape3D_8jk4b")
-
-[node name="DP1" parent="mapSpongbob/tombol" instance=ExtResource("7_5hp6q")]
+[node name="DP1" parent="mapSpongbob/tombol" node_paths=PackedStringArray("prompt", "pintu") instance=ExtResource("14_gpom0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.34356, 1.5, 24.6306)
+prompt = NodePath("../../../cmd")
+pintu = NodePath("../../../mapPatrick/duri/DP1")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="mapSpongbob/tombol/DP1"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mapSpongbob/tombol/DP1/StaticBody3D"]
-shape = SubResource("BoxShape3D_8jk4b")
-
-[node name="DP2" parent="mapSpongbob/tombol" instance=ExtResource("7_5hp6q")]
+[node name="DP2" parent="mapSpongbob/tombol" node_paths=PackedStringArray("prompt", "pintu") instance=ExtResource("14_gpom0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.55504, 1.5, 20.2223)
+prompt = NodePath("../../../cmd")
+pintu = NodePath("../../../mapPatrick/duri/DP2")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="mapSpongbob/tombol/DP2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mapSpongbob/tombol/DP2/StaticBody3D"]
-shape = SubResource("BoxShape3D_8jk4b")
-
-[node name="DP3" parent="mapSpongbob/tombol" instance=ExtResource("7_5hp6q")]
+[node name="DP3" parent="mapSpongbob/tombol" node_paths=PackedStringArray("prompt", "pintu") instance=ExtResource("14_gpom0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.1879, 1.5, 25.2477)
+prompt = NodePath("../../../cmd")
+pintu = NodePath("../../../mapPatrick/duri/DP3")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="mapSpongbob/tombol/DP3"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mapSpongbob/tombol/DP3/StaticBody3D"]
-shape = SubResource("BoxShape3D_8jk4b")
-
-[node name="DP4" parent="mapSpongbob/tombol" instance=ExtResource("7_5hp6q")]
+[node name="DP4" parent="mapSpongbob/tombol" node_paths=PackedStringArray("prompt", "pintu") instance=ExtResource("14_gpom0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.9734, 1.5, 4.75721)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="mapSpongbob/tombol/DP4"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mapSpongbob/tombol/DP4/StaticBody3D"]
-shape = SubResource("BoxShape3D_8jk4b")
+prompt = NodePath("../../../cmd")
+pintu = NodePath("../../../mapPatrick/duri/DP4")
 
 [node name="gerbang" type="Node3D" parent="mapSpongbob"]
 
 [node name="GS1" parent="mapSpongbob/gerbang" instance=ExtResource("8_6mjt1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4722, 2.01309, 16.6625)
 
-[node name="GS2" parent="mapSpongbob/gerbang" instance=ExtResource("8_7io42")]
+[node name="GS2" parent="mapSpongbob/gerbang" instance=ExtResource("8_6mjt1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8481, 2.00283, 16.8733)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="mapSpongbob/gerbang/GS2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mapSpongbob/gerbang/GS2/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0209723, 1.00851, 0.967964)
-shape = SubResource("BoxShape3D_wvfxk")
-
-[node name="GS3" parent="mapSpongbob/gerbang" instance=ExtResource("8_7io42")]
+[node name="GS3" parent="mapSpongbob/gerbang" instance=ExtResource("8_6mjt1")]
 transform = Transform3D(-0.00668454, 0, 0.999978, 0, 1, 0, -0.999978, 0, -0.00668454, -19.4582, 2.00283, 4.1386)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="mapSpongbob/gerbang/GS3"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mapSpongbob/gerbang/GS3/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0209723, 1.00851, 0.967964)
-shape = SubResource("BoxShape3D_wvfxk")
-
-[node name="GS4" parent="mapSpongbob/gerbang" instance=ExtResource("8_7io42")]
+[node name="GS4" parent="mapSpongbob/gerbang" instance=ExtResource("8_6mjt1")]
 transform = Transform3D(-0.00668454, 0, 0.999978, 0, 1, 0, -0.999978, 0, -0.00668454, -29.2807, 2.00283, 22.0222)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="mapSpongbob/gerbang/GS4"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mapSpongbob/gerbang/GS4/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0209723, 1.00851, 0.967964)
-shape = SubResource("BoxShape3D_wvfxk")
-
-[node name="GS5" parent="mapSpongbob/gerbang" instance=ExtResource("8_7io42")]
+[node name="GS5" parent="mapSpongbob/gerbang" instance=ExtResource("8_6mjt1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.7159, 2.00283, 10.2586)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="mapSpongbob/gerbang/GS5"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mapSpongbob/gerbang/GS5/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0209723, 1.00851, 0.967964)
-shape = SubResource("BoxShape3D_wvfxk")
 
 [node name="kunci" type="Node3D" parent="mapSpongbob"]
 
-[node name="PP1" parent="mapSpongbob/kunci" instance=ExtResource("9_doeos")]
+[node name="PP1" parent="mapSpongbob/kunci" node_paths=PackedStringArray("prompt") instance=ExtResource("10_nu6m0")]
 transform = Transform3D(0.393496, -0.880007, 0.265986, 0.70492, 0.103097, -0.701755, 0.590127, 0.463636, 0.660902, 11.2837, 2.22184, 16.1436)
+prompt = NodePath("../../../cmd")
 
-[node name="PP2" parent="mapSpongbob/kunci" instance=ExtResource("9_doeos")]
+[node name="PP2" parent="mapSpongbob/kunci" node_paths=PackedStringArray("prompt") instance=ExtResource("10_nu6m0")]
 transform = Transform3D(0.393496, -0.880007, 0.265986, 0.70492, 0.103097, -0.701755, 0.590127, 0.463636, 0.660902, -0.529487, 2.22184, 2.20216)
+prompt = NodePath("../../../cmd")
 
-[node name="PP3" parent="mapSpongbob/kunci" instance=ExtResource("9_doeos")]
+[node name="PP3" parent="mapSpongbob/kunci" instance=ExtResource("10_nu6m0")]
 transform = Transform3D(0.393496, -0.880007, 0.265986, 0.70492, 0.103097, -0.701755, 0.590127, 0.463636, 0.660902, -28.7731, 2.22184, 24.4515)
-
-[node name="laba-laba" type="Node3D" parent="mapSpongbob"]
-
-[node name="Sketchfab_Scene" parent="mapSpongbob/laba-laba" instance=ExtResource("10_tfhpa")]
-transform = Transform3D(108.392, 0, 0, 0, 108.392, 0, 0, 0, 108.392, 12.8715, 1.51804, 7.84694)
-
-[node name="Sketchfab_Scene2" parent="mapSpongbob/laba-laba" instance=ExtResource("10_tfhpa")]
-transform = Transform3D(108.392, 0, 0, 0, 108.392, 0, 0, 0, 108.392, -8.06608, 1.51804, 7.98837)
-
-[node name="Sketchfab_Scene3" parent="mapSpongbob/laba-laba" instance=ExtResource("10_tfhpa")]
-transform = Transform3D(1.52662, 0, 108.381, 0, 108.392, 0, -108.381, 0, 1.52662, -9.19777, 1.51804, 3.01619)
-
-[node name="Sketchfab_Scene4" parent="mapSpongbob/laba-laba" instance=ExtResource("10_tfhpa")]
-transform = Transform3D(-108.382, 0, 1.47367, 0, 108.392, 0, -1.47367, 0, -108.382, -18.4615, 1.51804, 7.25538)
-
-[node name="Sketchfab_Scene5" parent="mapSpongbob/laba-laba" instance=ExtResource("10_tfhpa")]
-transform = Transform3D(-3.52001, 0, 108.335, 0, 108.392, 0, -108.335, 0, -3.52001, -23.0173, 1.51804, 11.3743)
-
-[node name="tali" type="Node3D" parent="mapSpongbob"]
-
-[node name="tali" parent="mapSpongbob/tali" instance=ExtResource("11_e304h")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 5.0881, 2.33105, 8.33602)
-
-[node name="tali2" parent="mapSpongbob/tali" instance=ExtResource("11_e304h")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -5.46842, 2.33105, 24.4177)
-
-[node name="tali3" parent="mapSpongbob/tali" instance=ExtResource("11_e304h")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -12.2479, 2.33105, 2.9025)
-
-[node name="tali4" parent="mapSpongbob/tali" instance=ExtResource("11_e304h")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -18.4644, 2.33105, 16.4338)
-
-[node name="tali5" parent="mapSpongbob/tali" instance=ExtResource("11_e304h")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -23.5134, 2.33105, 23.8346)
 
 [node name="mapPatrick" parent="." instance=ExtResource("12_2cp16")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -10.1953)
 
 [node name="duri" type="Node3D" parent="mapPatrick"]
 
-[node name="DP4" type="Node3D" parent="mapPatrick/duri"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000293732, -0.000118256, -0.883937)
+[node name="DP3" parent="mapPatrick/duri" instance=ExtResource("17_bneth")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.057, 0, 19.738)
 
-[node name="duri19" parent="mapPatrick/duri/DP4" instance=ExtResource("2_l702r")]
-transform = Transform3D(-0.999993, 0, -0.00373499, 0, 1, 0, 0.00373499, 0, -0.999993, -57.3678, 1.46503, -4.55261)
+[node name="DP2" parent="mapPatrick/duri" instance=ExtResource("17_bneth")]
 
-[node name="duri20" parent="mapPatrick/duri/DP4" instance=ExtResource("2_l702r")]
-transform = Transform3D(-0.999993, 0, -0.00373499, 0, 1, 0, 0.00373499, 0, -0.999993, -57.3658, 1.46503, -4.03412)
+[node name="DP1" parent="mapPatrick/duri" instance=ExtResource("17_bneth")]
 
-[node name="duri21" parent="mapPatrick/duri/DP4" instance=ExtResource("2_l702r")]
-transform = Transform3D(-0.999993, 0, -0.00373499, 0, 1, 0, 0.00373499, 0, -0.999993, -57.3638, 1.46503, -3.49072)
-
-[node name="duri22" parent="mapPatrick/duri/DP4" instance=ExtResource("2_l702r")]
-transform = Transform3D(-0.999993, 0, -0.00373499, 0, 1, 0, 0.00373499, 0, -0.999993, -58.3086, 1.46503, -4.54818)
-
-[node name="duri23" parent="mapPatrick/duri/DP4" instance=ExtResource("2_l702r")]
-transform = Transform3D(-0.999993, 0, -0.00373499, 0, 1, 0, 0.00373499, 0, -0.999993, -58.3067, 1.46503, -4.02968)
-
-[node name="duri24" parent="mapPatrick/duri/DP4" instance=ExtResource("2_l702r")]
-transform = Transform3D(-0.999993, 0, -0.00373499, 0, 1, 0, 0.00373499, 0, -0.999993, -58.3046, 1.46503, -3.48628)
-
-[node name="duri25" parent="mapPatrick/duri/DP4" instance=ExtResource("2_l702r")]
-transform = Transform3D(-0.999993, 0, -0.00373499, 0, 1, 0, 0.00373499, 0, -0.999993, -59.3977, 1.46503, -4.54818)
-
-[node name="duri26" parent="mapPatrick/duri/DP4" instance=ExtResource("2_l702r")]
-transform = Transform3D(-0.999993, 0, -0.00373499, 0, 1, 0, 0.00373499, 0, -0.999993, -59.3957, 1.46503, -4.02968)
-
-[node name="duri27" parent="mapPatrick/duri/DP4" instance=ExtResource("2_l702r")]
-transform = Transform3D(-0.999993, 0, -0.00373499, 0, 1, 0, 0.00373499, 0, -0.999993, -59.3937, 1.46503, -3.48628)
-
-[node name="DP3" type="Node3D" parent="mapPatrick/duri"]
-
-[node name="duri13" parent="mapPatrick/duri/DP3" instance=ExtResource("2_l702r")]
-transform = Transform3D(-0.999993, 0, -0.00373499, 0, 1, 0, 0.00373499, 0, -0.999993, -30.2611, 1.46503, -18.3567)
-
-[node name="duri14" parent="mapPatrick/duri/DP3" instance=ExtResource("2_l702r")]
-transform = Transform3D(-0.999993, 0, -0.00373499, 0, 1, 0, 0.00373499, 0, -0.999993, -30.2591, 1.46503, -17.8382)
-
-[node name="duri15" parent="mapPatrick/duri/DP3" instance=ExtResource("2_l702r")]
-transform = Transform3D(-0.999993, 0, -0.00373499, 0, 1, 0, 0.00373499, 0, -0.999993, -30.2571, 1.46503, -17.2948)
-
-[node name="duri16" parent="mapPatrick/duri/DP3" instance=ExtResource("2_l702r")]
-transform = Transform3D(-0.999993, 0, -0.00373499, 0, 1, 0, 0.00373499, 0, -0.999993, -31.2019, 1.46503, -18.3523)
-
-[node name="duri17" parent="mapPatrick/duri/DP3" instance=ExtResource("2_l702r")]
-transform = Transform3D(-0.999993, 0, -0.00373499, 0, 1, 0, 0.00373499, 0, -0.999993, -31.2, 1.46503, -17.8338)
-
-[node name="duri18" parent="mapPatrick/duri/DP3" instance=ExtResource("2_l702r")]
-transform = Transform3D(-0.999993, 0, -0.00373499, 0, 1, 0, 0.00373499, 0, -0.999993, -31.1979, 1.46503, -17.2904)
-
-[node name="DP2" type="Node3D" parent="mapPatrick/duri"]
-
-[node name="duri7" parent="mapPatrick/duri/DP2" instance=ExtResource("2_l702r")]
-transform = Transform3D(0.000977353, 0, 1, 0, 1, 0, -1, 0, 0.000977353, -22.7992, 1.46503, -14.2927)
-
-[node name="duri8" parent="mapPatrick/duri/DP2" instance=ExtResource("2_l702r")]
-transform = Transform3D(0.000977353, 0, 1, 0, 1, 0, -1, 0, 0.000977353, -23.3177, 1.46503, -14.2932)
-
-[node name="duri9" parent="mapPatrick/duri/DP2" instance=ExtResource("2_l702r")]
-transform = Transform3D(0.000977353, 0, 1, 0, 1, 0, -1, 0, 0.000977353, -23.8611, 1.46503, -14.2937)
-
-[node name="duri10" parent="mapPatrick/duri/DP2" instance=ExtResource("2_l702r")]
-transform = Transform3D(0.000977353, 0, 1, 0, 1, 0, -1, 0, 0.000977353, -22.7992, 1.46503, -15.2335)
-
-[node name="duri11" parent="mapPatrick/duri/DP2" instance=ExtResource("2_l702r")]
-transform = Transform3D(0.000977353, 0, 1, 0, 1, 0, -1, 0, 0.000977353, -23.3177, 1.46503, -15.234)
-
-[node name="duri12" parent="mapPatrick/duri/DP2" instance=ExtResource("2_l702r")]
-transform = Transform3D(0.000977353, 0, 1, 0, 1, 0, -1, 0, 0.000977353, -23.8611, 1.46503, -15.2346)
-
-[node name="DP1" type="Node3D" parent="mapPatrick/duri"]
-
-[node name="duri" parent="mapPatrick/duri/DP1" instance=ExtResource("2_l702r")]
-transform = Transform3D(0.000977353, 0, 1, 0, 1, 0, -1, 0, 0.000977353, -22.7992, 1.46503, 6.16746)
-
-[node name="duri2" parent="mapPatrick/duri/DP1" instance=ExtResource("2_l702r")]
-transform = Transform3D(0.000977353, 0, 1, 0, 1, 0, -1, 0, 0.000977353, -23.3177, 1.46503, 6.16695)
-
-[node name="duri3" parent="mapPatrick/duri/DP1" instance=ExtResource("2_l702r")]
-transform = Transform3D(0.000977353, 0, 1, 0, 1, 0, -1, 0, 0.000977353, -23.8611, 1.46503, 6.16642)
-
-[node name="duri4" parent="mapPatrick/duri/DP1" instance=ExtResource("2_l702r")]
-transform = Transform3D(0.000977353, 0, 1, 0, 1, 0, -1, 0, 0.000977353, -22.7992, 1.46503, 5.22662)
-
-[node name="duri5" parent="mapPatrick/duri/DP1" instance=ExtResource("2_l702r")]
-transform = Transform3D(0.000977353, 0, 1, 0, 1, 0, -1, 0, 0.000977353, -23.3177, 1.46503, 5.22611)
-
-[node name="duri6" parent="mapPatrick/duri/DP1" instance=ExtResource("2_l702r")]
-transform = Transform3D(0.000977353, 0, 1, 0, 1, 0, -1, 0, 0.000977353, -23.8611, 1.46503, 5.22558)
+[node name="DP4" parent="mapPatrick/duri" instance=ExtResource("17_bneth")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.057, 0, 19.738)
 
 [node name="framepatrict" parent="mapPatrick" instance=ExtResource("13_5iead")]
 transform = Transform3D(0.357987, 0.904679, -0.231086, -0.903581, 0.398031, 0.15847, 0.235344, 0.152075, 0.959941, -38.9477, 2.85415, -9.96323)
@@ -565,151 +351,214 @@ shape = SubResource("BoxShape3D_cowu6")
 
 [node name="kunci" type="Node3D" parent="mapPatrick"]
 
-[node name="PS1" parent="mapPatrick/kunci" instance=ExtResource("9_doeos")]
-transform = Transform3D(0.393496, -0.880007, 0.265986, 0.70492, 0.103097, -0.701755, 0.590127, 0.463636, 0.660902, -25.7911, 2.3748, 7.4382)
+[node name="PS1" parent="mapPatrick/kunci" node_paths=PackedStringArray("prompt") instance=ExtResource("10_nu6m0")]
+transform = Transform3D(0.393496, -0.880007, 0.265986, 0.70492, 0.103097, -0.701755, 0.590127, 0.463636, 0.660902, -25.7067, 2.3748, 7.4382)
+prompt = NodePath("../../../cmd")
 
-[node name="PS2" parent="mapPatrick/kunci" instance=ExtResource("9_doeos")]
+[node name="PS2" parent="mapPatrick/kunci" node_paths=PackedStringArray("prompt") instance=ExtResource("10_nu6m0")]
 transform = Transform3D(0.703203, -0.230889, 0.672454, 0.70492, 0.103097, -0.701755, 0.0926995, 0.967503, 0.235256, -30.4171, 2.3748, 2.95382)
+prompt = NodePath("../../../cmd")
 
-[node name="PS3" parent="mapPatrick/kunci" instance=ExtResource("9_doeos")]
+[node name="PS3" parent="mapPatrick/kunci" instance=ExtResource("10_nu6m0")]
 transform = Transform3D(0.134715, 0.95191, 0.27517, 0.70492, 0.103097, -0.701755, -0.696377, 0.28851, -0.657131, -45.2891, 2.3748, -17.2915)
 
 [node name="gerbang" type="Node3D" parent="mapPatrick"]
 
-[node name="GP1" parent="mapPatrick/gerbang" instance=ExtResource("8_7io42")]
+[node name="GP1" parent="mapPatrick/gerbang" instance=ExtResource("8_6mjt1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.6909, 2.04536, 6.52151)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="mapPatrick/gerbang/GP1"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mapPatrick/gerbang/GP1/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0209723, 1.00851, 0.967964)
-shape = SubResource("BoxShape3D_m3dol")
-
-[node name="GP2" parent="mapPatrick/gerbang" instance=ExtResource("8_7io42")]
+[node name="GP2" parent="mapPatrick/gerbang" instance=ExtResource("8_6mjt1")]
 transform = Transform3D(-0.00123922, 0, -0.999999, 0, 1, 0, 0.999999, 0, -0.00123922, -36.2759, 2.00214, -18.9713)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="mapPatrick/gerbang/GP2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mapPatrick/gerbang/GP2/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0209723, 1.00851, 0.967964)
-shape = SubResource("BoxShape3D_m3dol")
 
 [node name="pintu" type="Node3D" parent="mapPatrick"]
 
-[node name="PP1" parent="mapPatrick/pintu" instance=ExtResource("4_a2rlh")]
+[node name="PP1" parent="mapPatrick/pintu" node_paths=PackedStringArray("prompt", "player") instance=ExtResource("16_eh35o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0523, 1.62865, 7.41732)
+prompt = NodePath("../../../cmd")
+player = NodePath("../../../SubViewportContainer2/SubViewport/patrick")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="mapPatrick/pintu/PP1"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mapPatrick/pintu/PP1/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3292, 0.0131226)
-shape = SubResource("BoxShape3D_n274f")
-
-[node name="PP2" parent="mapPatrick/pintu" instance=ExtResource("4_a2rlh")]
+[node name="PP2" parent="mapPatrick/pintu" node_paths=PackedStringArray("prompt", "player") instance=ExtResource("16_eh35o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.0918, 1.62865, -17.5653)
+prompt = NodePath("../../../cmd")
+player = NodePath("../../../SubViewportContainer2/SubViewport/patrick")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="mapPatrick/pintu/PP2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mapPatrick/pintu/PP2/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3292, 0.0131226)
-shape = SubResource("BoxShape3D_n274f")
-
-[node name="PP3" parent="mapPatrick/pintu" instance=ExtResource("4_a2rlh")]
+[node name="PP3" parent="mapPatrick/pintu" node_paths=PackedStringArray("prompt", "player") instance=ExtResource("16_eh35o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.903, 1.64371, -4.61342)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="mapPatrick/pintu/PP3"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mapPatrick/pintu/PP3/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3292, 0.0131226)
-shape = SubResource("BoxShape3D_n274f")
+prompt = NodePath("../../../cmd")
+player = NodePath("../../../SubViewportContainer2/SubViewport/patrick")
 
 [node name="tombol" type="Node3D" parent="mapPatrick"]
 
-[node name="DS1" parent="mapPatrick/tombol" instance=ExtResource("7_5hp6q")]
+[node name="DS1" parent="mapPatrick/tombol" node_paths=PackedStringArray("prompt", "pintu") instance=ExtResource("14_gpom0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0845, 1.59721, -2.49054)
+prompt = NodePath("../../../cmd")
+pintu = NodePath("../../../mapSpongbob/duri/DS1")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="mapPatrick/tombol/DS1"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mapPatrick/tombol/DS1/StaticBody3D"]
-shape = SubResource("BoxShape3D_q88u5")
-
-[node name="DS2" parent="mapPatrick/tombol" instance=ExtResource("7_5hp6q")]
+[node name="DS2" parent="mapPatrick/tombol" node_paths=PackedStringArray("prompt", "pintu") instance=ExtResource("14_gpom0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0845, 1.59721, -17.7506)
+prompt = NodePath("../../../cmd")
+pintu = NodePath("../../../mapSpongbob/duri/DS2")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="mapPatrick/tombol/DS2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mapPatrick/tombol/DS2/StaticBody3D"]
-shape = SubResource("BoxShape3D_q88u5")
-
-[node name="GS1" parent="mapPatrick/tombol" instance=ExtResource("14_gpom0")]
+[node name="GS1" parent="mapPatrick/tombol" node_paths=PackedStringArray("prompt", "pintu") instance=ExtResource("14_gpom0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.55144, 1.59721, -6.89272)
+prompt = NodePath("../../../cmd")
+pintu = NodePath("../../../mapSpongbob/gerbang/GS1")
 
-[node name="GS2" parent="mapPatrick/tombol" instance=ExtResource("7_5hp6q")]
+[node name="GS2" parent="mapPatrick/tombol" node_paths=PackedStringArray("prompt", "pintu") instance=ExtResource("14_gpom0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.865, 1.59721, -7.6304)
+prompt = NodePath("../../../cmd")
+pintu = NodePath("../../../mapSpongbob/gerbang/GS2")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="mapPatrick/tombol/GS2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mapPatrick/tombol/GS2/StaticBody3D"]
-shape = SubResource("BoxShape3D_q88u5")
-
-[node name="GS3" parent="mapPatrick/tombol" instance=ExtResource("7_5hp6q")]
+[node name="GS3" parent="mapPatrick/tombol" node_paths=PackedStringArray("prompt", "pintu") instance=ExtResource("14_gpom0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.0886, 1.59721, -19.2743)
+prompt = NodePath("../../../cmd")
+pintu = NodePath("../../../mapSpongbob/gerbang/GS3")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="mapPatrick/tombol/GS3"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mapPatrick/tombol/GS3/StaticBody3D"]
-shape = SubResource("BoxShape3D_q88u5")
-
-[node name="GS4" parent="mapPatrick/tombol" instance=ExtResource("7_5hp6q")]
+[node name="GS4" parent="mapPatrick/tombol" node_paths=PackedStringArray("prompt", "pintu") instance=ExtResource("14_gpom0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.1025, 1.59721, -25.466)
+prompt = NodePath("../../../cmd")
+pintu = NodePath("../../../mapSpongbob/gerbang/GS4")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="mapPatrick/tombol/GS4"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mapPatrick/tombol/GS4/StaticBody3D"]
-shape = SubResource("BoxShape3D_q88u5")
-
-[node name="GS5" parent="mapPatrick/tombol" instance=ExtResource("7_5hp6q")]
+[node name="GS5" parent="mapPatrick/tombol" node_paths=PackedStringArray("prompt", "pintu") instance=ExtResource("14_gpom0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.1563, 1.59721, -12.3583)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="mapPatrick/tombol/GS5"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mapPatrick/tombol/GS5/StaticBody3D"]
-shape = SubResource("BoxShape3D_q88u5")
+prompt = NodePath("../../../cmd")
+pintu = NodePath("../../../mapSpongbob/gerbang/GS5")
 
 [node name="cerobong" type="Node3D" parent="mapPatrick"]
 
-[node name="C1" parent="mapPatrick/cerobong" instance=ExtResource("6_8evxr")]
-transform = Transform3D(-0.999987, 0, -0.00516618, 0, 1, 0, 0.00516618, 0, -0.999987, -7.77397, 1.50021, 5.33511)
+[node name="C1" parent="mapPatrick/cerobong" node_paths=PackedStringArray("prompt", "pair", "player") instance=ExtResource("6_mclp0")]
+transform = Transform3D(-0.999987, 0, -0.00516618, 0, 1, 0, 0.00516618, 0, -0.999987, -7.97737, 1.50021, 3.56479)
+prompt = NodePath("../../../cmd")
+pair = NodePath("../../../mapSpongbob/cerobong/C1")
+player = NodePath("../../../SubViewportContainer2/SubViewport/patrick")
 
-[node name="C2" parent="mapPatrick/cerobong" instance=ExtResource("6_8evxr")]
+[node name="C2" parent="mapPatrick/cerobong" node_paths=PackedStringArray("prompt", "pair", "player") instance=ExtResource("6_mclp0")]
 transform = Transform3D(0.997993, 0, 0.0633309, 0, 1, 0, -0.0633309, 0, 0.997993, -25.9511, 1.58236, -17.2691)
+prompt = NodePath("../../../cmd")
+pair = NodePath("../../../mapSpongbob/cerobong/C2")
+player = NodePath("../../../SubViewportContainer2/SubViewport/patrick")
 
-[node name="tali" type="Node3D" parent="mapPatrick"]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+offset_right = 965.0
+offset_bottom = 1080.0
 
-[node name="tali" parent="mapPatrick/tali" instance=ExtResource("11_e304h")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -16.098, 1.26012, 7.42171)
+[node name="SubViewport2" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(965, 1080)
+render_target_update_mode = 4
 
-[node name="tali2" parent="mapPatrick/tali" instance=ExtResource("11_e304h")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -23.294, 1.26012, -5.66454)
+[node name="Player" parent="SubViewportContainer/SubViewport2" node_paths=PackedStringArray("uikey") instance=ExtResource("3_srxqr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.0648, 1.8493, 17.5761)
+uikey = NodePath("../../../keyS")
 
-[node name="tali3" parent="mapPatrick/tali" instance=ExtResource("11_e304h")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -42.8904, 1.26012, -17.7339)
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -965.0
+offset_bottom = 1080.0
+grow_horizontal = 0
+size_flags_horizontal = 10
+size_flags_vertical = 4
+stretch = true
 
-[node name="laba-laba" type="Node3D" parent="mapPatrick"]
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer2"]
+handle_input_locally = false
+size = Vector2i(965, 1080)
+render_target_update_mode = 4
 
-[node name="Sketchfab_Scene" parent="mapPatrick/laba-laba" instance=ExtResource("10_tfhpa")]
-transform = Transform3D(5.96371, 0, 108.228, 0, 108.392, 0, -108.228, 0, 5.96371, -12.0825, 1.51804, 7.84694)
+[node name="patrick" parent="SubViewportContainer2/SubViewport" node_paths=PackedStringArray("uikey") instance=ExtResource("16_0uco1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5866, 1.62455, -9.38853)
+uikey = NodePath("../../../keyP")
 
-[node name="Sketchfab_Scene2" parent="mapPatrick/laba-laba" instance=ExtResource("10_tfhpa")]
-transform = Transform3D(5.96371, 0, 108.228, 0, 108.392, 0, -108.228, 0, 5.96371, -30.52, 1.51804, -1.36355)
+[node name="cmd" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -51.5
+offset_top = -194.0
+offset_right = 51.5
+offset_bottom = -81.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
 
-[node name="Sketchfab_Scene3" parent="mapPatrick/laba-laba" instance=ExtResource("10_tfhpa")]
-transform = Transform3D(107.712, 0, 12.1236, 0, 108.392, 0, -12.1236, 0, 107.712, -23.7394, 1.51804, -12.9876)
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 25.0
+offset_top = 975.0
+offset_right = 107.0
+offset_bottom = 1057.0
+texture = ExtResource("19_uwp4n")
+expand_mode = 1
 
-[node name="Sketchfab_Scene4" parent="mapPatrick/laba-laba" instance=ExtResource("10_tfhpa")]
-transform = Transform3D(107.712, 0, 12.1236, 0, 108.392, 0, -12.1236, 0, 107.712, -37.3006, 1.51804, -22.5288)
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -112.0
+offset_top = -105.0
+offset_right = -30.0
+offset_bottom = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("19_uwp4n")
+expand_mode = 1
 
-[node name="Player" parent="." instance=ExtResource("3_srxqr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41615, 1.60194, 18.4923)
+[node name="keyS" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -931.0
+offset_top = -69.0
+offset_right = -857.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 2
 
-[connection signal="interacted" from="mapPatrick/tombol/GS1" to="mapSpongbob/gerbang/GS1" method="open_door"]
+[node name="keyP" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 853.0
+offset_top = -73.0
+offset_right = 927.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 2
+
+[connection signal="visibility_changed" from="mapSpongbob/cerobong/C1/K" to="SubViewportContainer/SubViewport2/Player" method="ambil_kunci"]
+[connection signal="visibility_changed" from="mapSpongbob/cerobong/C2/K" to="SubViewportContainer/SubViewport2/Player" method="ambil_kunci"]
+[connection signal="tree_exited" from="mapSpongbob/kunci/PP1" to="SubViewportContainer/SubViewport2/Player" method="add_key"]
+[connection signal="tree_exited" from="mapSpongbob/kunci/PP2" to="SubViewportContainer/SubViewport2/Player" method="add_key"]
+[connection signal="tree_exited" from="mapSpongbob/kunci/PP3" to="SubViewportContainer/SubViewport2/Player" method="add_key"]
+[connection signal="tree_exited" from="mapPatrick/kunci/PS1" to="SubViewportContainer2/SubViewport/patrick" method="add_key"]
+[connection signal="tree_exited" from="mapPatrick/kunci/PS2" to="SubViewportContainer2/SubViewport/patrick" method="add_key"]
+[connection signal="tree_exited" from="mapPatrick/kunci/PS3" to="SubViewportContainer2/SubViewport/patrick" method="add_key"]
+[connection signal="visibility_changed" from="mapPatrick/cerobong/C1/K" to="SubViewportContainer2/SubViewport/patrick" method="ambil_kunci"]
+[connection signal="visibility_changed" from="mapPatrick/cerobong/C2/K" to="SubViewportContainer2/SubViewport/patrick" method="ambil_kunci"]
+
+[editable path="mapSpongbob/cerobong/C1"]
+[editable path="mapSpongbob/cerobong/C1/Interactable"]
+[editable path="mapSpongbob/cerobong/C2"]
+[editable path="mapSpongbob/cerobong/C2/Interactable"]
+[editable path="mapPatrick/cerobong/C1"]
+[editable path="mapPatrick/cerobong/C1/Interactable"]
+[editable path="mapPatrick/cerobong/C2"]
+[editable path="mapPatrick/cerobong/C2/Interactable"]

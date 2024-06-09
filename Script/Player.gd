@@ -17,15 +17,19 @@ const ANIMATION_BLEND : float = 7.0
 @onready var spring_arm_pivot : Node3D = $SpringArmPivot
 @onready var animator : AnimationTree = $AnimationTree
 
+@export var controls: KeyBind = null
+@export var uikey: Label
+@onready var key_hold = 0
+@onready var cerobong = false
 func _physics_process(delta):
 	var move_direction : Vector3 = Vector3.ZERO
-	move_direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
-	move_direction.z = Input.get_action_strength("move_backwards") - Input.get_action_strength("move_forwards")
+	move_direction.x = Input.get_action_strength(controls.kanan) - Input.get_action_strength(controls.kiri)
+	move_direction.z = Input.get_action_strength(controls.mundur) - Input.get_action_strength(controls.maju)
 	move_direction = move_direction.rotated(Vector3.UP, spring_arm_pivot.rotation.y)
 	
 	velocity.y -= gravity * delta
 	
-	if Input.is_action_pressed("run"):
+	if Input.is_action_pressed(controls.lari):
 		speed = run_speed
 	else:
 		speed = walk_speed
@@ -37,7 +41,7 @@ func _physics_process(delta):
 		player_mesh.rotation.y = lerp_angle(player_mesh.rotation.y, atan2(velocity.x, velocity.z), LERP_VALUE)
 	
 	var just_landed := is_on_floor() and snap_vector == Vector3.ZERO
-	var is_jumping := is_on_floor() and Input.is_action_just_pressed("jump")
+	var is_jumping := is_on_floor() and Input.is_action_just_pressed(controls.lompat)
 	if is_jumping:
 		velocity.y = jump_strength
 		snap_vector = Vector3.ZERO
@@ -61,3 +65,16 @@ func animate(delta):
 			animator.set("parameters/iwr_blend/blend_amount", lerp(animator.get("parameters/iwr_blend/blend_amount"), -1.0, delta * ANIMATION_BLEND))
 	else:
 		animator.set("parameters/ground_air_transition/transition_request", "air")
+
+func add_key():
+	key_hold += 1
+	uikey.text = str(key_hold)
+
+func min_key():
+	key_hold -= 1
+	uikey.text = str(key_hold)
+
+func ambil_kunci():
+	if cerobong:
+		add_key()
+	cerobong = !cerobong

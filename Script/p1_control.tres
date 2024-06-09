@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="KeyBind" load_steps=2 format=3 uid="uid://bhx3i4c81knhu"]
+
+[ext_resource type="Script" path="res://Script/key_bind.gd" id="1_w0ure"]
+
+[resource]
+script = ExtResource("1_w0ure")
+player_index = 0
+maju = "p1_maju"
+mundur = "p1_mundur"
+kanan = "p1_kanan"
+kiri = "p1_kiri"
+lompat = "p1_lompat"
+interaksi = "p1_interaksi"

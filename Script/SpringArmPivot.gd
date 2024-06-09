@@ -9,20 +9,27 @@ const CAMERA_BLEND : float = 0.05
 
 @onready var spring_arm : SpringArm3D = $SpringArm3D
 @onready var camera : Camera3D = $SpringArm3D/Camera3D
+const ROTATION_SPEED : float = 5.0
+
+@export var controls: KeyBind = null
 
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	pass
 
 func _unhandled_input(event):
-	if event is InputEventMouseMotion:
-		rotate_y(-event.relative.x * 0.005)
-		spring_arm.rotate_x(-event.relative.y * 0.005)
-		spring_arm.rotation.x = clamp(spring_arm.rotation.x, -PI/4, PI/4)
+	pass
+
 
 func _physics_process(_delta):
+	if Input.is_action_pressed(controls.kiri):
+		rotate_y(ROTATION_SPEED * _delta)
+	elif Input.is_action_pressed(controls.kanan):
+		rotate_y(-ROTATION_SPEED * _delta)
+	
+	# Handle FOV changes on running
 	if change_fov_on_run:
 		if owner.is_on_floor():
-			if Input.is_action_pressed("run"):
+			if Input.is_action_pressed(controls.lompat):
 				camera.fov = lerp(camera.fov, run_fov, CAMERA_BLEND)
 			else:
 				camera.fov = lerp(camera.fov, normal_fov, CAMERA_BLEND)

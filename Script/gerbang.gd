@@ -5,7 +5,8 @@ extends Node3D
 var playback = null
 @onready var anim = $AnimationPlayer
 
-func open_door(_body):
+func open_door():
 	if !open:
 		open = !open
 		anim.play("open")
+

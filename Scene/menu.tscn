@@ -5,17 +5,12 @@
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_wf3un"]
 
-[node name="menu" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Multiplayer" type="Node"]
 script = ExtResource("1_1uhao")
 
+[node name="Level" type="Node" parent="."]
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
 offset_left = 320.0
 offset_top = 250.0
 offset_right = 834.0
@@ -28,6 +23,11 @@ layout_mode = 2
 layout_mode = 2
 text = "Play as Spongebob"
 icon = SubResource("ViewportTexture_wf3un")
+
+[node name="Remote" type="LineEdit" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Enter Ip For Play as Patrick"
+alignment = 1
 
 [node name="Play Patrick" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -50,5 +50,4 @@ texture = ExtResource("2_7mjl1")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play Spongebob" to="." method="_on_play_spongebob_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play Patrick" to="." method="_on_play_patrick_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Play Patrick" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
